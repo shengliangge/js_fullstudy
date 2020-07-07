@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    background-color: rgb(85, 162, 206);
+    width: 375px;
+    height: 667px;
+}
+
+
+/* 内容区 */
+
+.container {
+    width: 300px;
+    height: 520px;
+    background-color: rgb(69, 154, 185);
+}
+
+
+/* 树 */
+
+.box {
+    width: 285px;
+    height: 500px;
+    /* border: 1px solid black; */
+    position: relative;
+    z-index: 100;
+    display: inline-block;
+}
+
+
+/* 树叶 */
+
+.leafbox {
+    width: 275px;
+    height: 250px;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    /* border: 1px solid black; */
+}
+
+.leaf {
+    background-color: rgb(124, 250, 140);
+    border-radius: 50%;
+    box-shadow: inset 0 0 30px #029953;
+}
+
+.leaf1 {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 120px;
+    left: 10px;
+}
+
+.leaf2 {
+    width: 190px;
+    height: 190px;
+    position: absolute;
+    top: 30px;
+    left: 45px;
+}
+
+.leaf3 {
+    width: 210px;
+    height: 210px;
+    position: absolute;
+    left: 60px;
+    top: 70px;
+}
+
+
+/* 树干 */
+
+.trunkbox {
+    width: 80px;
+    height: 250px;
+    position: absolute;
+    top: 284px;
+    left: 105px;
+    z-index: -1;
+}
+
+.trunk {
+    background-image: linear-gradient(to right, rgb(156, 131, 120), rgb(99, 77, 69));
+}
+
+.turnk1 {
+    transform: rotate(20deg);
+    width: 12px;
+    height: 77px;
+    position: absolute;
+    top: 12px;
+    left: 50px;
+    z-index: -1;
+}
+
+.turnk2 {
+    transform: rotate(-5deg);
+    width: 40px;
+    height: 237px;
+    position: absolute;
+    left: 20px;
+}
+
+.turnk3 {
+    transform: rotate(-20deg);
+    width: 10px;
+    height: 65px;
+    position: absolute;
+    left: 3px;
+}
+
+
+/* 垃圾桶 */
+
+.trash {
+    width: 60px;
+    height: 102px;
+    background-color: rgb(194, 115, 48);
+    position: absolute;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    top: 417px;
+    left: 220px;
+}
+
+.trash-bottom {
+    border-radius: 7px;
+    width: 40px;
+    height: 20px;
+    background-color: rgb(241, 147, 87);
+    position: absolute;
+    top: 14px;
+    left: 11px;
+}
+
+.trash-mouth {
+    border-radius: 7px;
+    width: 40px;
+    height: 20px;
+    background-color: rgb(54, 50, 52);
+    position: absolute;
+    top: 8px;
+    left: 11px;
+}
+
+
+/* 背景草 */
+
+.grass {
+    width: 300px;
+    height: 85px;
+    background-color: rgb(75, 158, 80);
+    position: absolute;
+    top: 435px;
+    z-index: -2;
+}
+
+
+/* 底部背景 */
+
+.grass-top {
+    width: 320px;
+    height: 15px;
+    background-color: rgb( 88, 178, 90);
+    border-top-right-radius: 40px;
+}
+
+.grass-bottom {
+    width: 322px;
+    height: 30px;
+    background-color: rgb(97, 201, 104);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 15px;
+    /* border-top: 20px solid rgb(88, 178, 91); */
+}
