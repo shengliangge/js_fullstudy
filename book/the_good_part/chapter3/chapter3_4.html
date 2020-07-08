@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var student = {
+            name: "zhangsan",
+            gender: "male"
+        }
+        var studentCopy = student;
+        studentCopy.name = 'wangwu'
+            //因为studentCopy和student是指向同一个对象的引用，所以student的name也改变成wangwu了
+        console.log(student.name)
+        console.log(studentCopy.name)
+        console.log(student.name === studentCopy.name)
+
+        var a = {},
+            b = {},
+            c = {}
+            //a、b和c每个都引用不用的空对象
+        a = b = c = {}
+            //a、b和c都引用同一个空对象
+    </script>
+</body>
+
+</html>

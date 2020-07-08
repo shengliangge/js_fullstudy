@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var student = {
+            name: "zhangsan",
+            gender: "male",
+            age: 18,
+            score: 80
+        }
+        if (typeof Object.beget != 'function') {
+            Object.beget = function(o) {
+                var F = function() {}
+                F.prototype = o
+                return new F()
+            }
+        }
+        var collegeStudent = Object.beget(student)
+            //更新新对象不会改变该对象的原型
+        collegeStudent.name = "zhaoliu";
+        console.log(student.name)
+        console.log(collegeStudent.name)
+            //新对象未定义的属性值继承原型的属性值
+        console.log("新对象：" + collegeStudent.gender)
+            //为原型添加一个birthday属性
+        student.birthday = "1998-04-07"
+            //新对象自动继承原型新添加的属性
+        console.log("collegeStudent.birthday:" + collegeStudent.birthday)
+        delete collegeStudent.name;
+        console.log(collegeStudent.name)
+    </script>
+</body>
+
+</html>

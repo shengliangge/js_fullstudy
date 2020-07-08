@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var student = {
+        //     name: "zhangsan",
+        //     gender: "male",
+        //     age: 18,
+        //     score: 80
+        // }
+        // //删除自己的属性
+        // console.log("删除前")
+        // console.log(student)
+        // delete student.name
+        // console.log("删除后")
+        // console.log(student)
+
+        var student = {
+            name: "zhangsan",
+            gender: "male",
+            age: 18,
+        }
+        if (typeof Object.beget != 'function') {
+            Object.beget = function(o) {
+                var F = function() {}
+                F.prototype = o
+                return new F()
+            }
+        }
+        //定义新的collegeStudent对象，使用student对象为原型
+        var collegeStudent = Object.beget(student)
+        console.log("删除前" + collegeStudent.name)
+            //collegeStudent尝试删除原型的属性
+        delete collegeStudent.name;
+        console.log("删除后" + collegeStudent.name)
+    </script>
+</body>
+
+</html>

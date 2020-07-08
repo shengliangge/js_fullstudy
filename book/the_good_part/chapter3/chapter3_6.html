@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var student = {
+                name: "zhangsan",
+                gender: "male",
+                age: 18,
+                score: 80
+            }
+            //     //输出student的属性类型
+            // console.log("student的属性：" + typeof student.name)
+            // console.log("student的属性：" + typeof student.gender)
+            // console.log("student的属性：" + typeof student.age)
+            // console.log("student的属性：" + typeof student.score)
+
+        // //注意：原型链中的属性也会产生值，例如：
+        // console.log("原型链的属性：" + typeof student.toString)
+        //属于自己的
+        console.log(student.hasOwnProperty('name'))
+            //属于自己的
+        console.log(student.hasOwnProperty('age'))
+            //属于原型链的
+        console.log(student.hasOwnProperty('toString'))
+    </script>
+</body>
+
+</html>
