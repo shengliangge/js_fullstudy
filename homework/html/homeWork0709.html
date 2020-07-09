@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mycanvas {
+            width: 1000px;
+            height: 1000px;
+            border: 1px solid black;
+        }
+        
+        .box {
+            margin: 10px;
+        }
+        
+        #btn {
+            height: 35px;
+            width: 60px;
+            background: rgb(225, 240, 20);
+            border: solid 1px rgb(126, 134, 9);
+            border-radius: 5px;
+        }
+        
+        #text {
+            height: 35px;
+            width: 300px;
+            margin-right: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" id="text" placeholder="输入你要显示的字">
+        <button id="btn">显示</button>
+    </div>
+    <canvas id="mycanvas"></canvas>
+</body>
+<script>
+    var c = document.getElementById("mycanvas");
+    var btn = document.getElementById("btn");
+    var text = document.getElementById("text");
+    var ctx = c.getContext("2d");
+    var a = 155
+    btn.addEventListener('click', function() {
+        c.height = c.height; //清理之前画的数字
+        ctx.font = "40px Verdana";
+        // 创建线性渐变
+        var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+        gradient.addColorStop("0", 'rgb(244,81,30');
+        gradient.addColorStop("0.5", "rgb(251,188,5");
+        gradient.addColorStop("1.0", "rgb(11,172,19)");
+        // 用渐变填色
+        ctx.fillStyle = gradient;
+        ctx.fillText(text.value, 15, 90);
+    })
+</script>
+
+</html>

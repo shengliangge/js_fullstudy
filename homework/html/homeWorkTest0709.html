@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>canvas写字测试</title>
+</head>
+
+<body>
+    <input type="text" id="text" placeholder="请输入文字"><br/><br/>
+    <input type="button" name="" value="写入文字" id="btn"><br/><br/>
+    <canvas id="mycv" width="600px" height="600px" style="border:1px solid black;">
+        您的浏览器不支持canvas标签
+    </canvas>
+</body>
+<script type="text/javascript">
+    var canvas = document.getElementById("mycv");
+    var text = document.getElementById("text");
+    var btn = document.getElementById("btn");
+
+    btn.onclick = function() {
+        //clear
+        canvas.height = canvas.height;
+        var value = text.value;
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            //创建渐变
+            var grad = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            grad.addColorStop("0", "magenta");
+            grad.addColorStop("0.5", "yellow");
+            grad.addColorStop("1.0", "red");
+            ctx.font = "bold 30px arial";
+            ctx.fillStyle = "blue";
+            //竖排文字  保持X轴不变Y轴递增
+            for (var i = 0; i < value.length; i++) {
+                //绘制有填充的文本
+                ctx.fillText(value[i], 10, 35 * (i + 1));
+                //绘制无填充的文本
+                ctx.strokeText(value[i], 60, 35 * (i + 1));
+            }
+            //横排文字
+            ctx.strokeStyle = grad;
+            ctx.fillText(value, 150, 50);
+            ctx.strokeText(value, 150, 150);
+        }
+    }
+</script>
+
+</html>
