@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>audio</title>
     <style>
         * {
             margin: 0;
@@ -48,10 +48,10 @@
 
 <body>
     <div class="content">
-        <audio controls id="audio" src="http://m8.music.126.net/21180815163607/04976f67866d4b4d11575ab418904467/ymusic/515a/5508/520b/f0cf47930abbbb0562c9ea61707c4c0b.mp3?infoId=92001"></audio>
+        <canvas id="canvas"></canvas>
+        <audio controls id="audio" src="http://m8.music.126.net/21180815163607/04976f67866d4b4d11575ab418904467/ymusic/515a/5508/520b/f0cf47930abbbb0562c9ea61707c4c0b.mp3?infoId=92001" crossorigin="anonymous"></audio>
         <a href="javascript:;" id="btn">PLAY</a>
     </div>
-
 
     <script>
         var btn = document.getElementById("btn");
@@ -63,9 +63,46 @@
             }
             // 出现音浪
         function onLoadAudio() {
-            var context = new(window.AudioContext || window.webkitAudioContext) //获取到audio的参数
-                // console.log(context)
+            var context = new(window.AudioContext || window.webkitAudioContext); //获取到audio的参数
+            // console.log(context);
+            var analyser = context.createAnalyser(); //创建一个分析器，可以获取音频的时间和频率的数据，可视化这份数据
+            console.log(analyser);
+            analyser.fftSize = 512;
+            // //输入 流式播放
+            var source = context.createMediaElementSource(audio);
+            source.connect(analyser);
+            analyser.connect(context.destination);
+            var bufferLength = analyser.frequencyBinCount;
+            // console.log(bufferLength)
+            var dataArray = new Uint8Array(bufferLength); //定义8位数组存放音频
+            // console.log(dataArray);
+            var canvas = document.getElementById('canvas');
+            // canvas.Width = window.innerWidth;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            var ctx = canvas.getContext("2d");
+            var WIDTH = canvas.width;
+            var HEIGHT = canvas.height;
+            var barWidth = WIDTH / bufferLength * 1.5 //树状条的宽度等于画布宽度/要显示的条数
+            var barHeight;
+            console.log(barWidth)
 
+            function renderFrame() {
+                requestAnimationFrame(renderFrame);
+                analyser.getByteFrequencyData(dataArray);
+                console.log(dataArray)
+                ctx.clearRect(0, 0, WIDTH, HEIGHT);
+                for (var i = 0, x = 0; i < 256; i++) {
+                    barHeight = dataArray[i];
+                    var r = barHeight + 25 * (i / bufferLength);
+                    var g = 250 * (i / bufferLength);
+                    var b = 50;
+                    ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+                    ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+                    x += barWidth + 2;
+                }
+            }
+            renderFrame();
         }
     </script>
 </body>
