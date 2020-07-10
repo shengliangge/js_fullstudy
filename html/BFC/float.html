@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            /* font-size: 0; */
+        }
+        
+        ul li {
+            list-style: none;
+        }
+        
+        .items {
+            overflow: hidden;
+            /* float: left; */
+        }
+        
+        .item {
+            width: 100px;
+            height: 50px;
+            background-color: aqua;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+        }
+        
+        .title {
+            width: 100px;
+            height: 60px;
+            background-color: brown;
+            text-align: center;
+            line-height: 50;
+        }
+        /* 使用伪类清理浮动 */
+        /* .clearfix::after {
+            content: '';
+            clear: both;
+            display: block;
+        } */
+    </style>
+</head>
+
+<body>
+    <ul class="items">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+        <li class="item">5</li>
+        <!-- <div style="clear: both;"></div> -->
+    </ul>
+
+    <div class="title"></div>
+</body>
+
+</html>
