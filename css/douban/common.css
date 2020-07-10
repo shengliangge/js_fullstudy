@@ -1,0 +1,60 @@
+html {
+    color: #111111;
+    background: #fff;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+td,
+th {
+    font: 12px Helvetica, Arial, sans-serif;
+    line-height: 1.62;
+}
+
+body {
+    padding-top: 30px;
+}
+
+
+/* 导航栏样式 */
+
+#anony-nav {
+    width: 1080px;
+    /* 网页的布局宽度*/
+    margin: 0 auto 25px;
+}
+
+#anony-nav .anony-nav-links {
+    float: right;
+    margin-top: 6px;
+}
+
+ul,
+ol {
+    list-style: none;
+}
