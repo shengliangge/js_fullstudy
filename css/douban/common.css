@@ -58,3 +58,28 @@ ul,
 ol {
     list-style: none;
 }
+
+#anony-nav .anony-nav-links li {
+    display: inline-block;
+    zoom: 1;
+    margin: 0 14px 0 0;
+}
+
+#anony-nav .anony-nav-links li a {
+    display: inline-block;
+    zoom: 1;
+    width: 40px;
+    height: 20px;
+    overflow: hidden;
+    /*超出隐藏*/
+    margin: 0;
+    line-height: 20em;
+    outline: none;
+    vertical-align: middle;
+    background: transparent url(/f/sns/8536084688879cb1137e8efdff30e59614ff2f86/pics/sns/anony_home/anony_nav_logo.png) no-repeat 100% 100%;
+    background-image: -webkit-image-set(url(/f/sns/8536084688879cb1137e8efdff30e59614ff2f86/pics/sns/anony_home/anony_nav_logo.png) 1x, url(/f/sns/82c3a65bdec3e60331a8dd5805bb842e76ac0c04/pics/sns/anony_home/anony_nav_logo@2x.png) 2x);
+}
+
+#anony-nav .anony-nav-links li .lnk-book {
+    background-position: 0 0;
+}
