@@ -1,0 +1,41 @@
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+ol,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: normal 13px/1.618 Helvetica, Arial, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+    min-height: 100%;
+    columns: #333;
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+ol,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
