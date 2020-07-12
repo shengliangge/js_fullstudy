@@ -593,12 +593,6 @@ a:hover {
     color: #494949;
 }
 
-.section .side {
-    float: right;
-    width: 265px;
-    margin-left: 30px;
-}
-
 #anony-time .time-list li {
     display: inline-block;
     width: 100px;
@@ -660,12 +654,6 @@ a:hover {
 
 /* 电影 */
 
-
-/* #anony-movie a:link,
-#anony-movie a:visited {
-    color: #27a;
-} */
-
 .side-links {
     margin-bottom: 40px;
 }
@@ -674,4 +662,185 @@ a:hover {
     position: relative;
     margin-top: 5px;
     font-size: 14px;
+}
+
+.list {
+    font-size: 0;
+    letter-spacing: -.31em;
+}
+
+.tags ul {
+    margin-top: -4px;
+}
+
+
+/* .mod:after {
+    content: '';
+    display: block;
+    clear: both;
+} */
+
+.list li {
+    display: inline-block;
+    zoom: 1;
+    width: 24.8%;
+    vertical-align: top;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+
+.tags li {
+    width: 4em;
+    margin-top: 4px;
+    text-align: left;
+}
+
+#anony-movie .movie-charts ol {
+    margin: 0;
+    padding: 0;
+}
+
+.list1 li {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+#anony-movie .movie-charts li {
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+    list-style-type: decimal;
+    list-style-position: inside;
+    border-bottom: 1px solid #eaeaea;
+}
+
+
+/* 电影main */
+
+#anony-movie .movie-list li {
+    margin-bottom: 20px;
+}
+
+.list .pic {
+    margin-bottom: 10px;
+}
+
+#anony-movie .movie-list .pic {
+    height: 145px;
+    overflow: hidden;
+}
+
+#anony-movie .movie-list img {
+    width: 100px;
+}
+
+.list .title {
+    line-height: 1.45;
+    font-size: 13px;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+}
+
+#anony-movie .movie-list .title a:link,
+#anony-movie .movie-list .title a:visited {
+    color: #333333;
+}
+
+.rating {
+    margin-bottom: 4px;
+}
+
+.allstar50,
+.allstar45,
+.allstar40,
+.allstar35,
+.allstar30,
+.allstar25,
+.allstar20,
+.allstar15,
+.allstar10,
+.allstar05,
+.allstar00,
+.rating1-t,
+.rating15-t,
+.rating2-t,
+.rating25-t,
+.rating3-t,
+.rating35-t,
+.rating4-t,
+.rating45-t,
+.rating5-t,
+.rating-t,
+.starb~.stars5,
+.starb~.stars4,
+.starb~.stars3,
+.starb~.stars2,
+.starb~.stars1,
+.collectors .stars5,
+.collectors .stars4,
+.collectors .stars3,
+.collectors .stars2,
+.collectors .stars1 {
+    display: inline-block;
+    zoom: 1;
+    background: -webkit-image-set(url(https://img3.doubanio.com/f/shire/b8f4c3672ef81106701071831e22422a745d3b74/pics/rating_icons/ic_rating_s.png) 1x, url(https://img3.doubanio.com/f/shire/0147ca9efddcac80050854590d26bee587b008df/pics/rating_icons/ic_rating_s@2x.png) 2x) no-repeat;
+    width: 55px;
+    height: 11px;
+    margin: 0 3px 0 0;
+    overflow: hidden;
+}
+
+.allstar45 {
+    background-position: 0 -11px;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+i,
+strong,
+th,
+var,
+optgroup {
+    font-style: normal;
+    font-weight: normal;
+}
+
+.rating i {
+    margin-left: 4px;
+    color: #e09015;
+}
+
+.bn-link {
+    display: inline-block;
+    zoom: 1;
+    vertical-align: middle;
+    padding: 2px 10px;
+    border-radius: 2px;
+}
+
+.bn-link:link,
+.bn-link:visited {
+    background: #999a99;
+    color: #ffffff;
+}
+
+#anony-movie .bn-link:link,
+#anony-movie .bn-link:visited {
+    background: #1c8bd0;
+    color: #ffffff;
+}
+
+.extra {
+    clear: both;
+    text-align: right;
+}
+
+.section .extra {
+    width: 950px;
+    margin: 20px auto 0;
 }
