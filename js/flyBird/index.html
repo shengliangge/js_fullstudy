@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fly Brid</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="wrapBg">
+        <!-- 开始标题 -->
+        <div id="headTitle">
+            <img id="headBird" src="./img/bird0.png" alt="小鸟">
+
+        </div>
+        <!-- 开始按钮 -->
+        <button id="startBtn"></button>
+        <!-- 草地1 -->
+        <div id="grassLand1"></div>
+        <!-- 草地2 -->
+        <div id="grassLand2"></div>
+    </div>
+    <script src='./js/bird.js'></script>
+    <script>
+        // 获取容器
+        var jsWrapBg = document.getElementById('wrapBg');
+        // 获取标题
+        var jsHeadTitle = document.getElementById('headTitle');
+        // 获取标题中的小鸟
+        var jsHeadBird = document.getElementById('headBird');
+        var Y = 3; //标题摆动的幅度
+        var index = 0;
+        var imgArr = ['img/bird0.png', 'img/bird1.png'];
+        // 利用帧动画的原理做出小鸟翅膀摆动的样子
+        var headWaveTimer = setInterval(headWave, 200); //设置标题的上下摆动的定时器
+        // 鸟和标题动画
+        function headWave() {
+            Y *= -1;
+            jsHeadTitle.style.top = jsHeadTitle.offsetTop + Y + 'PX';
+            jsHeadBird.src = imgArr[index++];
+            if (index > 1) {
+                index = 0;
+            }
+        }
+        // 草地动画
+        var jsGrassLand1 = document.getElementById('grassLand1');
+        var jsGrassLand2 = document.getElementById('grassLand2');
+        // 让草地动起来
+        var landTimer = setInterval(landRun, 30)
+
+        function landRun() {
+            jsGrassLand1.style.left = jsGrassLand1.offsetLeft - 3 + 'px';
+            jsGrassLand2.style.left = jsGrassLand2.offsetLeft - 3 + 'px';
+            console.log(jsGrassLand2.offsetLeft)
+                // console.log(jsGrassLand1)
+            if (jsGrassLand1.offsetLeft <= -343) {
+                jsGrassLand1.style.left = 343 + 'px'
+            }
+            if (jsGrassLand2.offsetLeft <= -343) {
+                jsGrassLand2.style.left = 343 + 'px'
+            }
+        }
+        var jsStartBtn = document.getElementById('startBtn')
+            // 为start按钮添加一个点击事件的处理程序
+        jsStartBtn.onclick = function() {
+            //设置标题隐藏
+            jsHeadTitle.style.display = 'none'
+                // 关闭标题定时器
+            clearInterval(headWaveTimer)
+            jsStartBtn.style.display = 'none';
+            //插入小鸟到界面当中
+            bird.showBird(jsWrapBg);
+        }
+    </script>
+</body>
+
+</html>
