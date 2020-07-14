@@ -53,8 +53,8 @@
         function landRun() {
             jsGrassLand1.style.left = jsGrassLand1.offsetLeft - 3 + 'px';
             jsGrassLand2.style.left = jsGrassLand2.offsetLeft - 3 + 'px';
-            console.log(jsGrassLand2.offsetLeft)
-                // console.log(jsGrassLand1)
+            // console.log(jsGrassLand2.offsetLeft)
+            // console.log(jsGrassLand1)
             if (jsGrassLand1.offsetLeft <= -343) {
                 jsGrassLand1.style.left = 343 + 'px'
             }
@@ -72,6 +72,11 @@
             jsStartBtn.style.display = 'none';
             //插入小鸟到界面当中
             bird.showBird(jsWrapBg);
+            bird.flyBird();
+            jsWrapBg.onclick = function() {
+                bird.fallSpeed = -8;
+            }
+            bird.wingWave(); //控制小鸟翅膀煽动
         }
     </script>
 </body>
