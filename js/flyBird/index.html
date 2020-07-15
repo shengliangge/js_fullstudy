@@ -49,12 +49,15 @@
         var jsGrassLand1 = document.getElementById('grassLand1');
         var jsGrassLand2 = document.getElementById('grassLand2');
         var blockArr = [];
+        // var a = baseObj.randomNum(0, 150);
+        var blockDistance = baseObj.randomNum(120, 350);
         // 让草地动起来
         var landTimer = setInterval(landRun, 30)
+        var key = 0;
+        var flag = false;
 
         function landRun() {
-            jsGrassLand1.style.left = jsGrassLand1.offsetLeft - 3 + 'px';
-            jsGrassLand2.style.left = jsGrassLand2.offsetLeft - 3 + 'px';
+
             // console.log(jsGrassLand2.offsetLeft)
             // console.log(jsGrassLand1)
             if (jsGrassLand1.offsetLeft <= -343) {
@@ -63,6 +66,38 @@
             if (jsGrassLand2.offsetLeft <= -343) {
                 jsGrassLand2.style.left = 343 + 'px'
             }
+            //草地的移动
+            jsGrassLand1.style.left = jsGrassLand1.offsetLeft - 3 + 'px';
+            jsGrassLand2.style.left = jsGrassLand2.offsetLeft - 3 + 'px';
+
+            //管道的移动
+            if (blockArr.length) {
+                console.log(blockArr.length)
+                for (var i = 0; i < blockArr.length; i++) {
+                    blockArr[i].moveBlock();
+                    var x = baseObj.rectangleCrashExamine(blockArr[i].downDivWrap, bird.div);
+                    var y = baseObj.rectangleCrashExamine(blockArr[i].upDivWrap, bird.div);
+                    var z = bird.div.offsetTop >= 390;
+                    if (x || y || z) {
+                        window.clearInterval(landTimer); //清除草地移动的定时器
+                        jsWrapBg.onclick = null;
+                        bird.fallSpeed = 0;
+                    }
+                }
+
+                if ((blockArr[blockArr.length - 1].downDivWrap.offsetLeft) < (450 - blockDistance)) {
+                    var b = new Block();
+                    b.createBlock();
+                    blockArr.push(b);
+                }
+            }
+
+            // if (flag == true && key % 80 == 0) {
+            //     var b = new Block();
+            //     b.createBlock();
+            //     blockArr.push(b);
+            // }
+            key++;
         }
         var jsStartBtn = document.getElementById('startBtn')
             // 为start按钮添加一个点击事件的处理程序
@@ -77,11 +112,14 @@
             bird.flyBird();
             bird.wingWave(); //控制小鸟翅膀煽动
             jsWrapBg.onclick = function() {
-                    bird.fallSpeed = -8;
-                }
-                //出现管道
+                bird.fallSpeed = -8;
+            }
+            flag = true;
+            // 出现管道
             var b = new Block();
             b.createBlock();
+            blockArr.push(b)
+            console.log(blockArr[0].downDivWrap)
         }
     </script>
 </body>
