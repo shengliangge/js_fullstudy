@@ -23,6 +23,7 @@ var bird = {
             if (bird.div.offsetTop >= 395) { //掉到地面，清除定时器
                 bird.fallSpeed = 0;
                 clearInterval(bird.flyTimer);
+                clearInterval(bird.wingTimer)
             }
             if (bird.fallSpeed > 12) { //控制小鸟的最大下落速度为12
                 bird.fallSpeed = 12;

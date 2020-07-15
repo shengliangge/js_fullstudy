@@ -13,7 +13,6 @@
         <!-- 开始标题 -->
         <div id="headTitle">
             <img id="headBird" src="./img/bird0.png" alt="小鸟">
-
         </div>
         <!-- 开始按钮 -->
         <button id="startBtn"></button>
@@ -23,6 +22,8 @@
         <div id="grassLand2"></div>
     </div>
     <script src='./js/bird.js'></script>
+    <script src='./js/beseObj.js'></script>
+    <script src='./js/block.js'></script>
     <script>
         // 获取容器
         var jsWrapBg = document.getElementById('wrapBg');
@@ -47,6 +48,7 @@
         // 草地动画
         var jsGrassLand1 = document.getElementById('grassLand1');
         var jsGrassLand2 = document.getElementById('grassLand2');
+        var blockArr = [];
         // 让草地动起来
         var landTimer = setInterval(landRun, 30)
 
@@ -73,10 +75,13 @@
             //插入小鸟到界面当中
             bird.showBird(jsWrapBg);
             bird.flyBird();
-            jsWrapBg.onclick = function() {
-                bird.fallSpeed = -8;
-            }
             bird.wingWave(); //控制小鸟翅膀煽动
+            jsWrapBg.onclick = function() {
+                    bird.fallSpeed = -8;
+                }
+                //出现管道
+            var b = new Block();
+            b.createBlock();
         }
     </script>
 </body>
