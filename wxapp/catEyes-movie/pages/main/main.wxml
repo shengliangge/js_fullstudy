@@ -1,0 +1,22 @@
+<view class="container">
+  <scroll-view scroll-y style="height:100%">
+    <view class="header">
+      <view class="header_hd">
+        <text>南昌</text>
+        <view class="downtips"></view>
+      </view>
+      <view class="header_bd">
+        <view class="header_bd-hot header_bd-btn" style="color:{{isLeft?'#ef4238':'#666'}}"  bindtap="tabChangeWaiting1">
+          正在上映
+        </view>
+        <view class="header_bd-waiting header_bd-btn" style="color:{{isLeft?'#666':'#ef4238'}}" bindtap="tabChangeWaiting2">
+          即将上映
+        </view>
+        <view class="bottomLine" style="left:{{isLeft?'73px':'143px'}}"></view>
+      </view>
+      <view class="header_ft">
+        <image src="../../images/sousuo.png"></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>
