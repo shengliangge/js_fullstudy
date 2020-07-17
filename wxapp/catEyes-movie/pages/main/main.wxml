@@ -6,16 +6,44 @@
         <view class="downtips"></view>
       </view>
       <view class="header_bd">
-        <view class="header_bd-hot header_bd-btn" style="color:{{isLeft?'#ef4238':'#666'}}"  bindtap="tabChangeWaiting1">
+        <view class="header_bd-hot header_bd-btn" style="color:{{isLeft?'#ef4238':'#666'}}" bindtap="tabChangeHot">
           正在上映
         </view>
-        <view class="header_bd-waiting header_bd-btn" style="color:{{isLeft?'#666':'#ef4238'}}" bindtap="tabChangeWaiting2">
+        <view class="header_bd-waiting header_bd-btn" style="color:{{isLeft?'#666':'#ef4238'}}" bindtap="tabChangeWaiting">
           即将上映
         </view>
         <view class="bottomLine" style="left:{{isLeft?'73px':'143px'}}"></view>
       </view>
       <view class="header_ft">
         <image src="../../images/sousuo.png"></image>
+      </view>
+    </view>
+    <swiper class="" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+      <swiper-item class="" wx:for="{{imgUrls}}" wx:key="index">
+        <image class="slide-image" src="{{item}}" />
+      </swiper-item>
+    </swiper>
+    <view wx:for="{{movieList}}" wx:key="index">
+      <view class="flex item">
+        <view class="item_left">
+          <image class="" src="{{item.imgUrl}}" />
+        </view>
+        <view class="item_middle">
+          <text class="item_name" >
+            {{item.name}}
+          </text>
+            <text class="item_actor" >
+            {{item.actor}}
+          </text>
+          <text class="item.wantSee" >
+            {{item.wantSee}}人想看              
+          </text>
+          <text class="" >
+            {{item.time}}
+          </text>
+        </view>
+        <view class="item_right"></view>
+        购票
       </view>
     </view>
   </scroll-view>

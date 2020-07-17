@@ -56,6 +56,8 @@
     background-color: #ef4238;
     position: absolute;
     bottom: 0;
+    /* 控制任何一个样式的变化，添加一个延迟的时间效果 ，在这里监听left的变化*/
+    transition: left .5s;
 }
 
 .header_ft {
@@ -72,4 +74,34 @@
 .header_ft image {
     width: 23px;
     height: 23px;
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.item {
+    padding: 10px;
+    background-color: #fff;
+    color: #787878;
+    border-top: 1px solid #eaeaea;
+    position: relative;
+    overflow: hidden;
+}
+
+.item_left {
+    float: left;
+}
+
+.item_left image {
+    display: block;
+    width: 65px;
+    height: 95px;
+}
+
+.item_middle {
+    float: left;
+    width: 60%;
+    padding-left: 10px;
+    padding-top: 5px;
 }
