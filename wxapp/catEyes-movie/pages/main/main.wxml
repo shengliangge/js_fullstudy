@@ -23,29 +23,22 @@
         <image class="slide-image" src="{{item}}" />
       </swiper-item>
     </swiper>
-    
     <view wx:for="{{movieList}}" wx:key="index">
       <view class="flex item">
         <view class="item_left">
           <image class="" src="{{item.imgUrl}}" />
         </view>
         <view class="item_middle">
-          <text class="item_name" >
-            {{item.name}}
-          </text>
-            <text class="item_actor" >
-            {{item.actor}}
-          </text>
-          <text class="item.wantSee" >
-            {{item.wantSee}}人想看              
-          </text>
-          <text class="" >
-            {{item.time}}
-
-          </text>
+          <text class="middle_name">{{item.name}}</text>
+          <!-- <text class="middle_actor">{{item.actor}}</text> -->
+          <view class="middle_wantSee">
+            <text class="wantSee">{{item.wantSee}}</text>
+            <text class="see">人想看</text>
+          </view>
+          <text class="middle_time">{{item.time}}上映</text>
         </view>
-        <view class="item_right"></view>
-        购票
+       <view class="item_right" wx:if="{{item.isShow==1}}">购票</view>
+       <view class="item_right"  wx:else style=" background-color: rgb(44, 122, 214);">预购</view>
       </view>
     </view>
   </scroll-view>
