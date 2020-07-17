@@ -23,6 +23,7 @@
         <image class="slide-image" src="{{item}}" />
       </swiper-item>
     </swiper>
+    
     <view wx:for="{{movieList}}" wx:key="index">
       <view class="flex item">
         <view class="item_left">
@@ -40,6 +41,7 @@
           </text>
           <text class="" >
             {{item.time}}
+
           </text>
         </view>
         <view class="item_right"></view>
