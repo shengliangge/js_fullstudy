@@ -37,8 +37,8 @@
           </view>
           <text class="middle_time">{{item.time}}上映</text>
         </view>
-       <view class="item_right" wx:if="{{item.isShow==1}}">购票</view>
-       <view class="item_right"  wx:else style=" background-color: rgb(44, 122, 214);">预购</view>
+        <view class="item_right" wx:if="{{item.isShow==1}}">购票</view>
+        <view class="item_right" wx:else style=" background-color: rgb(44, 122, 214);">预购</view>
       </view>
     </view>
   </scroll-view>

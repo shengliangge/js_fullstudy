@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var ratio = 1 / window.devicePixelRatio;
+        var meta = document.createElement('meta');
+        meta.name = 'viewpory';
+        meta.content = 'initial-scale=' + ratio;
+        var head = document.querySelector('head');
+        head.appendChild(meta);
+        // head.insertBefore(meta, head.firstElementChild)
+
+        //把屏幕等分成10份
+        // 1rem=屏幕/10
+        const width = window.innerWidth / 10;
+        console.log(window.innerWidth);
+        const html = document.querySelector('html');
+        html.style.fontSize = width + 'px'; // 1rem=html的font-size
+        //每一份 就是 1rem（因为font-size就是1rem）
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            /* 在不同的设备上面调整 html 的 font-size*/
+            /* 该调整多少？ 结合设计稿来实现的方案 */
+            /* DPR(设备像素比)=物理像素/逻辑像素(css里面的单位)*/
+            /* font-size: 20px; */
+        }
+        
+        input {
+            /* width: 444px; */
+            width: 5.92rem;
+            /* height: 56px; */
+            height: 0.7466666666rem;
+            /*  */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text">
+    </div>
+</body>
+
+</html>
