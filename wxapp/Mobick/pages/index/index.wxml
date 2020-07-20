@@ -1,0 +1,40 @@
+<view class="container">
+	<!-- title -->
+	<view class="page-title">
+		<text class="title title-bicycle">单车</text>
+		<text class="title title-motor">电单车</text>
+	</view>
+	<!-- body -->
+
+	<view class="page-body">
+		<view class="page-section page-section-gap">
+			<map
+			 id="map"
+			 scale="17"
+			 latitude="{{latitude}}"
+			 longitude="{{longitude}}"
+			 markers="{{markers}}"
+			 show-location
+			 style="width: 100%; height: 70vh;"
+			>
+				<cover-image class="img-map" src="../../img/当前位置.png"></cover-image>
+				<!-- cover-view -->
+				<cover-view class="cover-view">
+					<cover-image class="cover-top--img" src="../../img/红包.png"> </cover-image>
+					<cover-view class="cover-top">
+						<cover-view class="cover-text"> 10元红包人人可拿 和浩然一起去追风</cover-view>
+					</cover-view>
+					<cover-view class="cover-down">
+						<cover-view class="cover-down-top">
+							<cover-view class="cover-text1">遵守交规 安全骑行</cover-view>
+							<cover-view class="cover-text2">骑行时请遵守交通规则，注意安全骑行</cover-view>
+							<cover-image class="cover-img" src="../../img/安全.png"> </cover-image>
+						</cover-view>
+						<cover-view class="cover-btn">扫码用车</cover-view>
+					</cover-view>
+				</cover-view>
+			</map>
+		</view>
+	</view>
+</view>
+

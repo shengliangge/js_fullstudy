@@ -1,0 +1,120 @@
+/* 头部单车电单车样式 */
+
+.page-title {
+    height: 50rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0 20rpx;
+}
+
+.title {
+    font-size: 32rpx;
+    font-weight: 500;
+    text-align: center;
+    width: 373rpx;
+    padding-bottom: 20rpx;
+}
+
+.title-motor {
+    color: rgb(66, 217, 192);
+}
+
+.cover-view {
+    position: absolute;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.img-map {
+    width: 54rpx;
+    height: 54rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* 覆盖容器的公共样式 */
+
+
+/* 顶部拿红包 */
+
+.cover-top--img {
+    width: 85rpx;
+    height: 85rpx;
+    border-radius: 50%;
+    position: absolute;
+    top: 10rpx;
+    left: 20rpx;
+}
+
+.cover-top {
+    margin: 20rpx;
+    border-radius: 30rpx;
+    width: 690rpx;
+    height: 60rpx;
+    color: #f3e7e7;
+    background: rgba(97, 105, 116, 1);
+}
+
+.cover-top .cover-text {
+    padding-left: 100rpx;
+    line-height: 60rpx;
+    font-size: 26rpx;
+}
+
+.text-last {
+    float: right;
+}
+
+.cover-down {
+    height: 30vh;
+    background: rgba(255, 255, 255, 1);
+    position: fixed;
+    bottom: 0;
+    width: 750rpx;
+    border-top-left-radius: 40rpx;
+    border-top-right-radius: 40rpx;
+}
+
+.cover-down-top {
+    padding: 60rpx 40rpx 10rpx 40rpx;
+    height: 150rpx;
+}
+
+.cover-text1 {
+    font-weight: 550;
+    font-size: 36rpx;
+}
+
+.cover-text2 {
+    margin-top: 20rpx;
+    font-size: 26rpx;
+    color: rgb(125, 125, 125);
+}
+
+.cover-img {
+    position: absolute;
+    border-radius: 50%;
+    left: 540rpx;
+    top: 20rpx;
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.cover-btn {
+    margin: 10rpx auto;
+    width: 90%;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgb(29, 229, 200);
+    border-radius: 10rpx;
+}
