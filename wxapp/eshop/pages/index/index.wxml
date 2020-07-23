@@ -1,0 +1,21 @@
+<view class="wrapper">
+	<view
+	 class="group"
+	 wx:for="{{articles}}"
+	 wx:for-item="group"
+	>
+		<view class="group-title">{{group.data}}</view>
+		<view class="group-content">
+			<view
+			 class="group-content-item"
+			 wx:for="{{group.items}}"
+			 wx:for-item="item"
+			 data-item="{{item}}"
+			>
+				<view class="group-content-item-desc">{{item.title}}</view>
+				<image src="{{item.pic}}"></image>
+			</view>
+		</view>
+	</view>
+</view>
+

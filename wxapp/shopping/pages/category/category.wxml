@@ -2,7 +2,9 @@
 <view class="main">
 	<!-- 左侧导航 -->
 	<view class="left-category">
+
 		<scroll-view class="category-scroll" scroll-y>
+
 			<block wx:for="{{category}}" wx:key="index">
 				<view
 				 bindtap="scroll"
@@ -11,7 +13,9 @@
 				>{{item.name}}
 				</view>
 			</block>
+
 		</scroll-view>
+
 	</view>
 	<!-- 右侧详情 -->
 	<view class="right-detail">
@@ -23,8 +27,11 @@
 		>
 			<!-- 外层循环 -->
 			<block wx:for="{{detail}}" wx:key="index">
+
 				<view class="detail-content__page" id="{{item.id}}">
+
 					<image class="page-image" src="{{item.banner}}" />
+
 					<view class="page-title">
 						<text>{{item.cate}}</text>
 					</view>

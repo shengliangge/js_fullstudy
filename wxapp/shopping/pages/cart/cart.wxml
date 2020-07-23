@@ -7,10 +7,20 @@
 			 wx:key="index"
 			>
 				<icon
+				 wx:if="{{item.selected}}"
 				 class="cart-pro-select"
 				 type="success"
 				 size="23"
 				 color="red"
+				 bindtap="selectList"
+				 data-index="{{index}}"
+				></icon>
+				<icon
+				 wx:else
+				 class="cart-pro-select"
+				 type="success"
+				 size="23"
+				 color="green"
 				 bindtap="selectList"
 				 data-index="{{index}}"
 				></icon>

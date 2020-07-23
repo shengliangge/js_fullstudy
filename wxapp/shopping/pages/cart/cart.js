@@ -8,8 +8,8 @@ Page({
     carts: [
     ],
     totalPrice: 0,
-    colorSelect:'white',
-    selectAllStatus:false
+    colorSelect: 'white',
+    selectAllStatus: false
   },
 
   /**
@@ -36,7 +36,7 @@ Page({
       this.setData({
         carts: [
           { id: 1, title: '新鲜芹菜 半斤', image: '/image/s5.png', num: 4, price: 0.01, selected: true },
-          { id: 2, title: '素米 500g', image: '/image/s6.png', num: 1, price: 0.03, selected: true }]
+          { id: 2, title: '素米 500g', image: '/image/s6.png', num: 1, price: 0.03, selected: false }]
       })
     }, 1000)
   },
@@ -47,10 +47,17 @@ Page({
   //点击全选
   selectAll(e) {
     console.log(e)
-    let selectAllStatus=this.data.selectAllStatus
-    selectAllStatus=!selectAllStatus
+    let selectAllStatus = this.data.selectAllStatus
+    selectAllStatus = !selectAllStatus
+
+    //把carts数组里面的每一条数据里面的selected改成false
+    let carts=this.data.carts
+    for (let i = 0; i < carts.length; i++) {
+        carts[i].selected=selectAllStatus
+    }
     this.setData({
-      selectAllStatus:selectAllStatus
+      selectAllStatus: selectAllStatus,
+      carts:carts
     })
   },
   /**

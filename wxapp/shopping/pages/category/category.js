@@ -155,8 +155,10 @@ Page({
     ],
     intoindex:''
   },
-  scroll: function (e) {
 
+
+  scroll: function (e) {
+    // console.log(e)
     console.log(e.currentTarget.dataset.id)
     this.setData({
       intoindex: e.currentTarget.dataset.id
