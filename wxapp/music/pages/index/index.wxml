@@ -1,0 +1,37 @@
+<view class="contain">
+	<swiper
+	 class="swiper"
+	 indicator-dots="{{indicatorDots}}"
+	 indicator-color="{{indicatorColor}}"
+	 autoplay="{{autoplay}}"
+	 interval="{{interval}}"
+	 duration="{{duration}}"
+	 circular="{{circular}}"
+	>
+		<block wx:for="{{banners}}" wx:key="index">
+			<swiper-item item-id>
+				<image class="slide-image" src="{{item.imageUrl}}" />
+			</swiper-item>
+		</block>
+	</swiper>
+
+	<!-- <view class="banners">
+    <image class="banners__pic" wx:for="{{banners}}" src="{{item.imageUrl}}" />
+  </view> -->
+	<view class="recommend-list">
+		<view class="title">推荐歌单</view>
+		<view class="inner-list">
+			<view
+			 class="recommend-item"
+			 wx:for="{{recommendList}}"
+			 wx:for-item="item"
+			 wx:key="id"
+			>
+				{{item.name}}
+				<image class="" src="{{item.picUrl}}" />
+			</view>
+		</view>
+		<!-- <image class="banners__pic1"  src="{{item.imageUrl}}" /> -->
+	</view>
+</view>
+

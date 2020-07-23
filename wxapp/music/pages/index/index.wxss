@@ -1,0 +1,14 @@
+.banners{
+  overflow: hidden;
+}
+.banners__pic{
+  width: 100%;
+  height: 300rpx;
+}
+.swiper{
+  width: 100%;
+}
+.slide-image{
+  width: 100%;
+  height: 300rpx;
+}

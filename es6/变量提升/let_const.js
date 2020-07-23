@@ -22,6 +22,12 @@
 //     let tmp;
 // }
 
-let a = 'a'
-let a = 'aa'
-console.log(a)
+// let a = 'a'
+// let a = 'aa'
+// console.log(a)
+
+
+if (true) {
+    console.log(age)
+    const age = 18;
+}
