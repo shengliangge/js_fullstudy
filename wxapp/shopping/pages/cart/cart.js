@@ -7,7 +7,9 @@ Page({
   data: {
     carts: [
     ],
-    totalPrice:0
+    totalPrice: 0,
+    colorSelect:'white',
+    selectAllStatus:false
   },
 
   /**
@@ -38,7 +40,19 @@ Page({
       })
     }, 1000)
   },
+  selectList(e) {
+    console.log(e);
+  },
 
+  //点击全选
+  selectAll(e) {
+    console.log(e)
+    let selectAllStatus=this.data.selectAllStatus
+    selectAllStatus=!selectAllStatus
+    this.setData({
+      selectAllStatus:selectAllStatus
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

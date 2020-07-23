@@ -11,6 +11,8 @@
 				 type="success"
 				 size="23"
 				 color="red"
+				 bindtap="selectList"
+				 data-index="{{index}}"
 				></icon>
 				<navigator class="cart-pro-goods" url>
 					<image class="cart-thumb" src="{{item.image}}" />
@@ -27,15 +29,23 @@
 			</view>
 			<view class="cart-footer">
 				<icon
+				 wx:if="{{selectAllStatus}}"
+				 class="total-select"
+				 type="success"
+				 size="23"
+				 color="red"
+				 bindtap="selectAll"
+				></icon>
+				<icon
+				 wx:else
 				 class="total-select"
 				 type="success"
 				 size="23"
 				 color="white"
+				 bindtap="selectAll"
 				></icon>
 				<text>全选</text>
 				<text class="cart-total-price">￥{{totalPrice}}</text>
-				<!-- <text class="cart-right">></text> -->
-
 			</view>
 		</view>
 	</view>
