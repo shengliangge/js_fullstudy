@@ -31,11 +31,11 @@
 				<text class="cart-pro-price">{{item.price}}</text>
 				<!-- 装加减总价 -->
 				<view class="cart-count-box">
-					<text class="cart-count-down">-</text>
+					<text class="cart-count-down" bindtap="down" data-index="{{index}}">-</text>
 					<text class="cart-count-num">{{item.num}}</text>
-					<text class="cart-count-add">+</text>
+					<text class="cart-count-add" bindtap="up" data-index="{{index}}">+</text>
 				</view>
-				<text class="cart-del">x</text>
+				<text class="cart-del" bindtap="del" data-index="{{index}}">x</text>
 			</view>
 			<view class="cart-footer">
 				<icon

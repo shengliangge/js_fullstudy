@@ -41,6 +41,42 @@ Page({
       this.getTotalPrice();
     }, 1000)
   },
+  down(e) {
+    let index = e.currentTarget.dataset.index
+    let carts = this.data.carts
+    if(carts[index].num>0){ //防止负数
+    carts[index].num--
+    this.setData({
+      carts: carts
+    })
+    this.getTotalPrice()
+  }
+  },
+  up(e) {
+    let index = e.currentTarget.dataset.index
+    let carts = this.data.carts
+    carts[index].num++
+    this.setData({
+      carts: carts
+    })
+    this.getTotalPrice();
+  },
+  del(e) {
+    let index = e.currentTarget.dataset.index
+    let carts = this.data.carts
+    console.log(carts)
+    carts.splice(index, 1)
+    console.log(carts)
+    this.setData({
+      carts: carts
+    })
+    if(carts.length<=0){ //当删除完的时候，把全选给清空
+      this.setData({
+        selectAllStatus:false
+      })
+    }
+    this.getTotalPrice();
+  },
   selectList(e) {
     let index = e.currentTarget.dataset.index;
     let carts = this.data.carts
@@ -62,7 +98,7 @@ Page({
         })
       }
     }
-   this.getTotalPrice();
+    this.getTotalPrice();
   },
   selectList2(e) {
     let index = e.currentTarget.dataset.index;
@@ -74,20 +110,24 @@ Page({
 
   //点击全选
   selectAll(e) {
-    console.log(e)
+    let carts = this.data.carts
+    if (carts.length > 0) { //判断购物车是否有东西
     let selectAllStatus = this.data.selectAllStatus
     selectAllStatus = !selectAllStatus
-
     //把carts数组里面的每一条数据里面的selected改成false
-    let carts = this.data.carts
-    for (let i = 0; i < carts.length; i++) {
-      carts[i].selected = selectAllStatus
+      for (let i = 0; i < carts.length; i++) {
+        carts[i].selected = selectAllStatus
+      }
+      this.setData({
+        selectAllStatus: selectAllStatus,
+        carts: carts
+      })
+      this.getTotalPrice();
+    } else {
+      this.setData({
+        selectAllStatus: false,
+      })
     }
-    this.setData({
-      selectAllStatus: selectAllStatus,
-      carts: carts
-    })
-    this.getTotalPrice();
   },
   //z计算总价格
   getTotalPrice() {
@@ -100,7 +140,7 @@ Page({
       }
     }
     this.setData({
-      totalPrice:totalPrice.toFixed(2)
+      totalPrice: totalPrice.toFixed(2)
     })
   },
   /**
