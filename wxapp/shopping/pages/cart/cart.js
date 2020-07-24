@@ -44,7 +44,7 @@ Page({
   down(e) {
     let index = e.currentTarget.dataset.index
     let carts = this.data.carts
-    if(carts[index].num>0){ //防止负数
+    if(carts[index].num>1){ //最少为意见
     carts[index].num--
     this.setData({
       carts: carts
