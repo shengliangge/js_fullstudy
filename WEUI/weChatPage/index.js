@@ -1,18 +1,18 @@
 let send=document.getElementById('send')
 send.addEventListener('click',function(){
-let li=document.createElement('li')
-li.setAttribute('class','content-item')
-let divPic=document.createElement('div')
-divPic.setAttribute('class','pic')
-li.appendChild(divPic)
-let img=document.createElement('img')
-img.setAttribute('src','./image/user.jpg')
-divPic.appendChild(img)
+// let li=document.createElement('li')
+// li.setAttribute('class','content-item')
+// let divPic=document.createElement('div')
+// divPic.setAttribute('class','pic')
+// li.appendChild(divPic)
+// let img=document.createElement('img')
+// img.setAttribute('src','./image/user.jpg')
+// divPic.appendChild(img)
 
-let message=document.createElement
+// let message=document.createElement
 
 
-console.log(li)
+// console.log(li)
 
 let l =` <li class="content-item">
 <div class="pic">
