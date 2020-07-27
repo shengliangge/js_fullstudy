@@ -1,0 +1,55 @@
+.container, .page{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.page__bd{
+  height: 100%;
+  background-color: #f5fafe;
+  overflow-y: auto;
+}
+.tab{
+  display: none;
+}
+.tab.show{
+  display: block;
+}
+.fruit-items{
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.pic img{
+  width: 150px;
+  height: 150px;
+}
+.fruit-item{
+  float: left;
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.item-con{
+  background-color: #fff;
+  text-align: center;
+}
+.weui-mine{
+  text-align: center;
+}
+.weui--bd__img{
+  display: flex;
+}
+.pic{
+  border-radius: 50%;
+}
+.weui--bd__img img{
+  width: 26.41px;
+  height: 26.41px;
+  margin-right: 5px;
+}
+.weui-title{
+  text-align: center;
+}
