@@ -1,0 +1,38 @@
+/* component/movieItem/movieItem.wxss */
+.item{
+  display: inline-flex;
+}
+.item .info{
+  width: 180rpx;
+  display: flex;
+  flex-direction: column;
+
+}
+.name{
+  padding: 0 5rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  max-width: 170rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.img{
+width: 180rpx;
+height: 250rpx;
+margin-bottom: 20rpx;
+border-radius: 10rpx;
+}
+.score-wrapper{
+  padding: 0 5rpx;
+  height: 37rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: rgb(100, 97, 97);
+  align-items: center;
+}
+
+
+
+

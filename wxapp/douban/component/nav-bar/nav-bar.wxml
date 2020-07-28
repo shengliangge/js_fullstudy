@@ -1,0 +1,10 @@
+<view>
+	<!-- 弥补nav-bar的高度 -->
+	<view style="height:{{topHeight}}px"></view>
+	<view class="container">
+		<!-- 手机头部显示点亮栏 -->
+		<view style="{{statusBarStyle}}"></view>
+		<view class="nav-bar" style="{{navBarStyle}}">{{title}}</view>
+	</view>
+</view>
+

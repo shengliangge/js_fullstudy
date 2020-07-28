@@ -1,0 +1,12 @@
+<view class="star">
+	<view wx:for="{{num}}">
+		<image class="star-item" src="/assets/imgs/rating_star_small_on.png"></image>
+	</view>
+	<view wx:for="{{isHasDecimal}}">
+		<image class="star-item" src="/assets/imgs/rating_star_small_half.png"></image>
+	</view>
+	<view wx:for="{{residue}}">
+		<image class="star-item" src="/assets/imgs/rating_star_small_off.png"></image>
+	</view>
+</view>
+

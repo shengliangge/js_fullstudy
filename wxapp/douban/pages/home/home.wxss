@@ -1,0 +1,49 @@
+.weui-search-bar {
+  background-color: #42bd55 !important
+}
+
+.weui-icon-search {
+  margin-top: 0 !important
+}
+
+.row {
+  margin-bottom: 30rpx;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  margin-bottom: 30rpx;
+  align-items: center;
+}
+
+.title-wrapper .title {
+  font-weight: bold;
+  font-size: 34rpx;
+}
+.title-wrapper .title-right{
+  display: flex;
+  align-items: center;
+  margin-right: 30rpx;
+}
+.title-wrapper .more{
+  font-size: 32rpx;
+  color: #42bd55;
+}
+.title-wrapper .arrow{
+  border: 1px solid #42bd55;
+  border-left: 1px solid #000;
+  width: 12rpx;
+  height: 12rpx;
+  border-left: none;
+  border-top: none;
+  transform: rotate(-45deg);
+}
+.scroll-view__movie{
+  height: 402rpx;
+    
+}
+.scroll-view__movie .item{
+  margin-left: 30rpx;
+}

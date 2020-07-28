@@ -1,0 +1,14 @@
+<view class="item">
+	<view class="info">
+		<image class="img" src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1141259048,554497535&fm=26&gp=0.jpg"></image>
+		<view class="name">第一部</view>
+		<view class="score-wrapper">
+			<!-- 星星组件 -->
+			<ratingStar score="3.5"></ratingStar>
+			<view class="score">5.7</view>
+		</view>
+
+	</view>
+
+</view>
+

@@ -1,0 +1,9 @@
+
+.star{
+  display: flex;
+  align-items: center;
+}
+.star-item{
+  width: 25rpx;
+  height: 25rpx;
+}
