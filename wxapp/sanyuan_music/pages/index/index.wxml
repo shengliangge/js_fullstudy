@@ -1,0 +1,9 @@
+<scroll-view class scroll-y>
+	<swiper class="banner">
+		<swiper-item class item-id></swiper-item>
+	</swiper>
+	<view>
+		<view wx:for="{{}}"></view>
+	</view>
+</scroll-view>
+
