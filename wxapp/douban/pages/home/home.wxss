@@ -22,16 +22,19 @@
   font-weight: bold;
   font-size: 34rpx;
 }
-.title-wrapper .title-right{
+
+.title-wrapper .title-right {
   display: flex;
   align-items: center;
   margin-right: 30rpx;
 }
-.title-wrapper .more{
+
+.title-wrapper .more {
   font-size: 32rpx;
   color: #42bd55;
 }
-.title-wrapper .arrow{
+
+.title-wrapper .arrow {
   border: 1px solid #42bd55;
   border-left: 1px solid #000;
   width: 12rpx;
@@ -40,10 +43,12 @@
   border-top: none;
   transform: rotate(-45deg);
 }
-.scroll-view__movie{
-  height: 402rpx;
-    
+
+.scroll-view__movie {
+  height: 345rpx;
+  white-space: nowrap;
 }
-.scroll-view__movie .item{
+
+.scroll-view__movie .item {
   margin-left: 30rpx;
 }

@@ -8,17 +8,27 @@
 	<view class="page__hd"></view>
 	<view class="page__bd">
 		<mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
-		<view class="row">
+		<view
+		 class="row"
+		 wx:for="{{allMovies}}"
+		 wx:ket="index"
+		>
 			<view class="title-wrapper">
-				<view class="title">影院热映</view>
+				<view class="title">{{item.title}}</view>
 				<view class="title-right">
 					<view class="more">查看更多</view>
 					<view class="arrow"></view>
 				</view>
 			</view>
-			<scroll-view class="scroll-view__movie" scroll-x="{{true}}">
+			<scroll-view class="scroll-view__movie" scroll-x>
 				<!-- 组件：每一部电影 -->
-				<movieItem class="item"></movieItem>
+				<movieItem
+				 class="item"
+				 wx:for="{{item.movies}}"
+				 wx:for-item="movie"
+				 movie="{{movie}}"
+				 wx:key="index"
+				></movieItem>
 			</scroll-view>
 		</view>
 	</view>

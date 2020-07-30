@@ -1,4 +1,4 @@
-<view class="star">
+<!-- <view class="star">
 	<view wx:for="{{num}}" wx:key="index">
 		<image class="star-item" src="/assets/imgs/rating_star_small_on.png"></image>
 	</view>
@@ -10,5 +10,14 @@
 	<view wx:for="{{residue}}" wx:key="index">
 		<image class="star-item" src="/assets/imgs/rating_star_small_off.png"></image>
 	</view>
+</view>
+ -->
+<view class="star">
+	<image
+	 class="star-item"
+	 wx:for="{{stars}}"
+	 wx:key="index"
+	 src="{{item}}"
+	></image>
 </view>
 
