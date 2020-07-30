@@ -4,7 +4,7 @@
 		<view class="name">第一部</view>
 		<view class="score-wrapper">
 			<!-- 星星组件 -->
-			<ratingStar score="3.5"></ratingStar>
+			<ratingStar score="3.2"></ratingStar>
 			<view class="score">5.7</view>
 		</view>
 
