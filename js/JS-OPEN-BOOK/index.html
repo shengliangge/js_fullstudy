@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      vertical-align: baseline;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      height: 100%;
+      overflow: hidden;
+      color: #fff;
+      -webkit-perspective: 1000;
+      -moz-perspective: 1000;
+      -ms-perspective: 1000;
+      -o-perspective: 1000;
+      perspective: 1000;
+      background-color: #444444;
+      background-image: -webkit-linear-gradient(top, #444444, #999999);
+    }
+
+    .book {
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -150px;
+      -webkit-transform: rotateX(60deg);
+      transform: rotateX(60deg);
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .page {
+      width: 300px;
+      height: 300px;
+      padding: 1em;
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-indent: 2em;
+      overflow: hidden;
+    }
+
+    .front {
+      background-color: #d93e2b;
+    }
+
+    .back {
+      background-color: #fff;
+    }
+
+    .front-cover {
+      cursor: move;
+      transform: rotateY(180deg);
+      transform-origin: 0 50%;
+    }
+
+    .front-cover .back {
+      background-image: url(https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2050318681,1081448419&fm=26&gp=0.jpg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      transform: translateZ(3px);
+    }
+
+    .book-cover .back {
+      transform: translateZ(-3px);
+    }
+
+    .p3d {
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+    }
+
+    .flip {
+      transform: rotateY(180deg)
+    }
+
+    .shadow,
+    .dino {
+      width: 196px;
+      height: 132px;
+      position: absolute;
+      left: 60px;
+      top: 60px;
+      transform-origin: 0 100%;
+    }
+
+    .dino {
+      background: url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3062649025,2826066354&fm=26&gp=0.jpg) no-repeat;
+      background-size: cover;
+    }
+
+    .shadow {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="book p3d">
+    <div class="book-cover p3d">
+      <div class="page back flip"></div>
+      <div class="page front p3d">
+        <div class="shadow"></div>
+        <div class="dino"></div>
+      </div>
+    </div>
+    <div class="front-cover p3d">
+      <div class="page front flip p3d">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nisl quis nulla eleifend
+          dignissim.Curabitur varius lobortis tincidunt. Maecenas gravida, nulla quis luctus imperdiet, ipsum nibh
+          consectetur ante, in sodales massa tortor eget neque. Donec porta ligula massa, id sagittis est. Ut nisl
+          tellus, faucibus nec feugiat ut, laoreet iaculis felis. Suspendisse ultrices mauris vel tellus suscipit
+          commodo. Integer vitae tortor erat. Pellentesque non tempor nisi.
+        </p>
+      </div>
+      <div class="page back"></div>
+    </div>
+  </div>
+  <script>
+    (function (window, document) {
+      let prefixes = ['webkit', 'moz', 'ms', 'o'],
+        book = document.querySelector('.book'),
+        page = document.querySelector('.front-cover'),
+        dino = document.querySelectorAll('.dino')[0],
+        shadow = document.querySelectorAll('.shadow')[0],
+        centerPoint = window.innerWidth / 2,
+        hold = false,
+        clamp = function (val, min, max) {
+          return Math.max(min, Math.min(val, max))
+        },
+        pageSize = 300
+        ;
+      //按下鼠标执行的时间
+      page.onmousedown = function () {
+        console.log('moas')
+        hold = true
+      }
+      //鼠标放开事件
+      window.onmouseup = function () {
+        console.log('moup')
+        if (hold) {
+          hold = false
+        }
+      }
+
+      //在hold为true的时候做翻书的逻辑
+      //鼠标移动时候执行的事件
+      window.onmousemove = function (evt) {
+        if (!hold) {
+          return
+        }
+        console.log(evt.pageX)
+        let angle = clamp((centerPoint - evt.pageX + pageSize) / pageSize * -90, -180, 0)
+        for (i = 0, j = prefixes.length; i < j; i++) {
+          page.style[prefixes[i] + 'Transform'] =`rotateY(${angle}deg)`
+          dino.style[prefixes[i] + "Transform"] = `rotateX(${angle / 2}deg)`
+          shadow.style[prefixes[i] + "Transform"] = `translateZ(1px) skewX(${angle / 8}deg)`
+
+        }
+      }
+    })(window, document)
+  </script>
+</body>
+
+</html>
