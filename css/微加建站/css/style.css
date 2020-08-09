@@ -1,0 +1,173 @@
+/* 指定编码 */
+
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+body{
+  min-width: 1200px;
+}
+header, .banner, section {
+  /* 设置IE盒子模型，不会把盒子撑开 */
+  box-sizing: border-box;
+  width: 100%;
+  /* 内容溢出隐藏 */
+  overflow: hidden;
+}
+
+/* 头部 */
+
+.header-top {
+  display: none;
+}
+
+.header-bottom {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 60px;
+  background: url(../img/logo.png) 60% center no-repeat;
+  flex: 3;
+}
+
+.nav {
+  /* 最小宽度 */
+  /* min-width: 650px; */
+  display: flex;
+  flex: 8;
+  justify-content: space-around;
+}
+
+.nav li {
+  padding: 32px 16px;
+}
+
+.nav li:nth-child(2) {
+  color: blue;
+  background: rgb(246, 246, 246);
+}
+
+.login-register {
+  flex: 2;
+}
+
+.login-register div {
+  width: 150px;
+  margin-left: 20%;
+  padding: 10px 0;
+  border-radius: 40px;
+  text-align: center;
+  color: gray;
+  background: rgb(246, 246, 246);
+}
+
+.login-register a {
+  padding: 0 10px;
+  color: gray;
+}
+
+/* banner */
+
+.banner img {
+  display: block;
+  width: 100%;
+}
+
+/* samples */
+
+section {
+  padding: 0 10%;
+  text-align: center;
+}
+
+.samples {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.samples figure {
+  width: 30%;
+  margin-top: 30px;
+}
+
+.samples img {
+  width: 100%;
+}
+
+.samples figcaption {
+  padding: 20px 0;
+  border-bottom: 1px solid #E5E5E5;
+  border-top: 1px solid #E5E5E5;
+}
+
+.samples a {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 50px;
+  color: white;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  background-color: #6fba2c;
+}
+
+section p {
+  padding: 40px 0;
+}
+
+section span {
+  display: inline-block;
+  padding: 10px 50px;
+  border: 1px solid #E5E5E5;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+/* 后面的样式会覆盖前面的样式：保持权值的一致性 */
+
+@media only screen and (min-width:750px) and (max-width:1200px) {
+  .nav{
+    display: none;
+  }
+  .header-top {
+    width: 100%;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 2px 3px lightgray;
+  }
+  .header-bottom{
+    margin-top:54px;
+  }
+  .menu {
+    margin-right: 20px;
+  }
+  .logo-pic {
+    margin-left: 20px;
+    height: 30px;
+    width: 46px;
+    background: url(../img/logo-min.png) center no-repeat;
+    background-size: 44px;
+  }
+  .com-name {
+    font-size: 14px;
+  }
+  .logo{
+    
+  }
+}
+
+@media only screen and (max-width:750px) {}
