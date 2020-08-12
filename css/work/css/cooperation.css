@@ -1,0 +1,258 @@
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote, p {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+}
+
+@media only screen and (min-width:1440px) and (max-width:1680px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width:1280px) and (max-width:1440px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (min-width:1024px) and (max-width:1280px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width:750px) and (max-width:1024px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+html, body {
+  width: 100%;
+}
+
+body {
+  min-width: 1200px;
+}
+
+/* 导航栏和底部样式 */
+
+a {
+  text-decoration: none;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+.head-nav {
+  width: 100%;
+}
+
+.head-nav-pic {
+  width: 16.35%;
+  position: absolute;
+  left: 9.3rem;
+  top: 2.5rem;
+}
+
+.head-nav-pic img {
+  width: 100%;
+}
+
+.head-nav-links {
+  margin-left: 30.416%;
+  display: flex;
+  align-items: center;
+  margin-top: 4.65rem;
+  margin-bottom: 2.9rem;
+}
+
+.head-nav-links ul {
+  width: 100%;
+  display: flex;
+}
+
+.links_item {
+  height: 3.75rem;
+  width: 7.8rem;
+  font-size: 1.7rem;
+  border-right: 1.5px solid black;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.6rem;
+}
+
+.links_item.platform {
+  width: 8.35rem;
+}
+
+.links_item.platform a {
+  margin-top: -0.3rem;
+}
+
+.links_item.mall {
+  width: 7.1rem;
+}
+
+.links_item.contactUs {
+  width: 8.6rem;
+}
+
+.links_item a {
+  color: black;
+}
+
+.section-pic img {
+  width: 100%;
+}
+
+.footer-nav {
+  width: 100%;
+  color: white;
+  background-color: #157c83;
+  padding-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-nav-links {
+  width: 100%;
+}
+
+.links-wrapper {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.links-wrapper-item {
+  display: flex;
+  /* justify-content: center; */
+  width: 8rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img_wrapper {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.img_wrapper img {
+  width: 2rem;
+}
+
+.links-wrapper-item .item-name {
+  margin-top: 1.2rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+}
+
+.item-name.distanceOne {
+  letter-spacing: 0.2rem;
+}
+
+.item-name.distanceTwo {
+  letter-spacing: 0.6rem;
+}
+
+.links-wrapper-item .item-english_name {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.links-wrapper-item .item-english_name.spaceOne {
+  letter-spacing: 0.15rem;
+}
+
+.links-wrapper-item .item-english_name.spaceTwo {
+  letter-spacing: 0.25rem;
+}
+
+.footer-company_desc {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.company_desc-wrapper {
+  width: 67.08%;
+  margin-top: 3rem;
+  padding: 3rem 0;
+  font-size: 0.85rem;
+  border-top: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.desc-name {
+  margin-bottom: 0.6rem;
+}
+
+/* banner图 */
+
+.content-banner__img {
+  width: 100%;
+}
+
+.content {
+  font-size: 0;
+}
+
+/* 内容主体 */
+
+.content-main {}
+
+/* h2标题 */
+
+.content-main h2 {
+  font-size: 3rem;
+  font-family: "Microsoft YaHei";
+  font-weight: normal;
+  text-align: center;
+}
+
+
+/* 合作伙伴 */
+
+.partner-title {
+  margin-top: 4.25rem;
+  margin-bottom: 2rem;
+}
+
+.partner-content {
+  border-top: 1px solid #000;
+  padding: 3.5rem 2.5rem 3rem 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.partner-content__list {
+  width: 18.96%;
+}
+
+.list-bottom {
+  margin-bottom: 1.65rem;
+}
+
+.partner-content__list img {
+  width: 100%;
+}

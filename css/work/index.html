@@ -3,14 +3,35 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>首页</title>
   <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
   <!-- 头部 -->
-  <header> </header>
+  <header>
+    <!-- 顶部导航栏 -->
+    <div class="head-nav">
+      <!-- 导航栏商标图片 -->
+      <div class="head-nav-pic">
+        <img src="./images/logo.png" alt="">
+      </div>
+      <!-- 具体的导航栏内容 -->
+      <div class="head-nav-links">
+        <ul>
+          <li class="links_item"><a href="">首页</a></li>
+          <li class="links_item"><a href="">方案</a> </li>
+          <li class="links_item"><a href="">产品</a></li>
+          <li class="links_item"><a href="">企业</a></li>
+          <li class="links_item"><a href="">合作</a></li>
+          <li class="links_item mall"><a href="">商城</a></li>
+          <li class="links_item platform"><a href="">充换电 <br /> 云平台</a></li>
+          <li class="links_item contactUs "><a href="">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
   <!-- 内容 -->
   <div class="content">
     <!-- banner -->
@@ -19,7 +40,7 @@
     </div>
     <!-- 内容主体 -->
     <div class="content-main">
-      <!-- 解决方案 -->
+      <!-- 第一部分：解决方案 -->
       <section class="content-main__solution">
         <!-- 标题 -->
         <div class="solution-title">
@@ -32,66 +53,245 @@
             <div class="solution-explain__text">
               <p>解决方案说明：</p>
               <p>
-                随着电动自行车领域逐步进入换电赛道，越来越多的厂家和运营商想涉足电动自行车换电领域。潜心研发4年充换电柜解决方案的比特安，以柜控系统，小程序，比特安智能充换电SaaS云平台为助力，为您的企业降低入局门槛，专业一步到位
+                随着电动自行车领域逐步进入换电赛道，越来越多的厂家和运营商想涉足电动自行车换电领域。潜心研发4年充换电柜解决方案的比特安，以柜控系统，小程序，比特安智能充换电云平台为助力，为您的企业降低入局门槛，专业一步到位。
               </p>
             </div>
           </div>
           <!-- 方案 -->
           <div class="solution-scheme">
             <div class="solution-scheme-top">
-              <img src="./images/solution_2.png" alt="">
-              <img src="./images/solution_2.png" alt="">
+              <!-- 方案一 -->
+              <div class="solution-plan">
+                <div class="solution-plan__text">
+                  <p class="text-chinese solution-plan__chinese">铁塔1.0方案</p>
+                  <p class="text-english solution-plan__english">Tower V1.0 scheme</p>
+                </div>
+                <img src="./images/solution_2.png" alt="">
+              </div>
+              <!-- 方案二 -->
+              <div class="solution-plan">
+                <div class="solution-plan__text">
+                  <p class="text-chinese solution-plan__chinese">铁塔2.0方案</p>
+                  <p class="text-english solution-plan__english">Tower V2.0 scheme</p>
+                </div>
+                <img src="./images/solution_2.png" alt="">
+              </div>
             </div>
             <div class="solution-scheme-down">
-              <img class="scheme-down__one" src="./images/solution_3.png" alt="">
-              <img class="scheme-down__two" src="./images/solution_4.png" alt="">
-              <img class="scheme-down__three" src="./images/solution_5.png" alt="">
+              <!-- 左边图片 -->
+              <div class="scheme-down__one">
+                <div class="solution-scheme__text">
+                  <p class="text-chinese  solution-scheme__chinese">电池厂方案</p>
+                  <p class="text-english  solution-scheme__english">Battery factory scheme</p>
+                </div>
+                <img class="product-img" src="./images/solution_3.png" alt="">
+              </div>
+              <!-- 中间图片 -->
+              <div class="scheme-down__two">
+                <div class="solution-scheme__text">
+                  <p class="text-chinese  solution-scheme__chinese">电池租赁商方案</p>
+                  <p class="text-english  solution-scheme__english">Battery renter solution</p>
+                </div>
+                <img class="product-img" src="./images/solution_4.png" alt="">
+              </div>
+              <!-- 右边图片 -->
+              <div class="scheme-down__three">
+                <div class="solution-scheme__text">
+                  <p class="text-chinese  solution-scheme__chinese">车行方案</p>
+                  <p class="text-english  solution-scheme__english">Vehicle scheme</p>
+                </div>
+                <img class="product-img" src="./images/solution_5.png" alt="">
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- 产品及方案 -->
+      <!-- 第二部分：产品及方案 -->
       <section class="content-main__product">
         <!-- 标题 -->
         <div class="product-title">
           <h2>产品及方案</h2>
         </div>
+        <!-- 内容区 -->
         <div class="product-content">
+          <!-- 左边部分 -->
           <div class="product-content__left">
             <img src="./images/product_bg1.png" alt="">
+            <div class="content-left__text">
+              <p>充换电云平台服务</p>
+              <p>帮助开发商和运营商快速接入云平台 </p>
+            </div>
+            <div class="content-left__link">
+              <p class="left-link">
+                <a href="www.bitean.cn">www.bitean.cn</a>
+              </p>
+            </div>
+            <!-- 左下 -->
+            <div class="content-left__down">
+              <div class="down-list list-margin">
+                <!-- 小方块 -->
+                <div class="down-list__block"></div>
+                <!-- 文字 -->
+                <p class="down-list__text">用户和权限管理</p>
+              </div>
+              <div class="down-list list-margin">
+                <!-- 小方块 -->
+                <div class="down-list__block list-orange"></div>
+                <!-- 文字 -->
+                <p class="down-list__text">订单管理</p>
+              </div>
+              <div class="down-list list-margin list-right__border">
+                <!-- 小方块 -->
+                <div class="down-list__block list-green"></div>
+                <!-- 文字 -->
+                <p class="down-list__text">设备管理</p>
+              </div>
+              <div class="down-list">
+                <!-- 小方块 -->
+                <div class="down-list__block list-green"></div>
+                <!-- 文字 -->
+                <p class="down-list__text">收益统计</p>
+              </div>
+              <div class="down-list">
+                <!-- 小方块 -->
+                <div class="down-list__block"></div>
+                <!-- 文字 -->
+                <p class="down-list__text">收益统计</p>
+              </div>
+              <div class="down-list list-right__border">
+                <!-- 小方块 -->
+                <div class="down-list__block list-orange"></div>
+                <!-- 文字 -->
+                <p class="down-list__text">固件升级管理</p>
+              </div>
+            </div>
           </div>
+          <!-- 右边部分 -->
           <div class="product-content__right">
-            <img class="content-bottom" src="./images/product_bg2.png" alt="">
-            <img class="content-bottom" src="./images/product_bg2.png" alt="">
-            <img src="./images/product_bg2.png" alt="">
-            <img src="./images/product_bg2.png" alt="">
+            <div class="right-box content-bottom">
+
+              <div class="right-box__inner">
+                <div class="right-box__text">
+                  <p>主控板</p>
+                </div>
+                <img class="right-box__border" src="./images/product_border.png" alt="">
+                <div class="right-box__pic">
+                  <img src="./images/product_1.png" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="right-box  content-bottom">
+              <div class="right-box__inner">
+                <div class="right-box__text">
+                  <p>检测板</p>
+                </div>
+                <img class="right-box__border" src="./images/product_border.png" alt="">
+                <div class="right-box__pic">
+                  <img src="./images/product_2.png" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="right-box ">
+              <div class="right-box__inner">
+                <div class="right-box__text">
+                  <p>仓控板</p>
+                </div>
+                <img class="right-box__border" src="./images/product_border.png" alt="">
+                <div class="right-box__pic">
+                  <img src="./images/product_3.png" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="right-box">
+              <div class="right-box__inner">
+                <div class="right-box__text">
+                  <p>方案应用</p>
+                </div>
+                <img class="right-box__border" src="./images/product_border.png" alt="">
+                <div class="right-box__pic right-last__pic">
+                  <img src="./images/product_4.png" alt="">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <!-- 合作伙伴 -->
+      <!-- 第三部分：合作伙伴 -->
       <section class="content-main__partner">
         <!-- 标题 -->
         <div class="partner-title">
           <h2>合作伙伴</h2>
         </div>
+        <!-- 合作伙伴图标 -->
         <ul class="partner-content">
-          <li class="partner-content__list"><img src="./images/partner_1.png" alt="" class="partner-content__image"></li>
-          <li class="partner-content__list"><img src="./images/partner_2.png" alt="" class="partner-content__image"></li>
-          <li class="partner-content__list"><img src="./images/partner_3.png" alt="" class="partner-content__image"></li>
-          <li class="partner-content__list"><img src="./images/partner_4.png" alt="" class="partner-content__image"></li>
-          <li class="partner-content__list"><img src="./images/partner_5.png" alt="" class="partner-content__image"></li>
-          <li class="partner-content__list"><img src="./images/partner_6.png" alt="" class="partner-content__image"></li>
-          <li class="partner-content__list"><img src="./images/partner_7.png" alt="" class="partner-content__image"></li>
-          <li class="partner-content__list"><img src="./images/partner_8.png" alt="" class="partner-content__image"></li>
-          <li class="partner-content__list"><img src="./images/partner_9.png" alt="" class="partner-content__image"></li>
-          <li class="partner-content__list"><img src="./images/partner_10.png" alt="" class="partner-content__image"></li>
-
+          <li class="partner-content__list list-bottom"><img src="./images/partner_1.png" alt=""
+              class="partner-content__image"></li>
+          <li class="partner-content__list list-bottom"><img src="./images/partner_2.png" alt=""
+              class="partner-content__image"></li>
+          <li class="partner-content__list list-bottom"><img src="./images/partner_3.png" alt=""
+              class="partner-content__image"></li>
+          <li class="partner-content__list list-bottom"><img src="./images/partner_4.png" alt=""
+              class="partner-content__image"></li>
+          <li class="partner-content__list list-bottom"><img src="./images/partner_5.png" alt=""
+              class="partner-content__image"></li>
+          <li class="partner-content__list"><img src="./images/partner_6.png" alt="" class="partner-content__image">
+          </li>
+          <li class="partner-content__list"><img src="./images/partner_7.png" alt="" class="partner-content__image">
+          </li>
+          <li class="partner-content__list"><img src="./images/partner_8.png" alt="" class="partner-content__image">
+          </li>
+          <li class="partner-content__list"><img src="./images/partner_9.png" alt="" class="partner-content__image">
+          </li>
+          <li class="partner-content__list"><img src="./images/partner_10.png" alt="" class="partner-content__image">
+          </li>
         </ul>
       </section>
     </div>
   </div>
   <!-- 脚部 -->
   <footer>
+    <div class="footer-nav">
+      <div class="footer-nav-links">
+        <div class="links-wrapper">
+          <div class="links-wrapper-item">
+            <div class="img_wrapper"><img src="./images/关于我们.png" alt=""></div>
+            <span class="item-name">关于我们</span>
+            <span class="item-english_name spaceTwo">about us</span>
+          </div>
+          <div class="links-wrapper-item">
+            <div class="img_wrapper"><img src="./images/产品与服务.png" alt=""></div>
+            <span class="item-name distance">产品与服务</span>
+            <span class="item-english_name">Product and Service</span>
+          </div>
+          <div class="links-wrapper-item">
+            <div class="img_wrapper"><img src="./images/服务协议.png" alt=""></div>
+            <span class="item-name distanceTwo">服务协议</span>
+            <span class="item-english_name">Service Agreement</span>
+          </div>
+          <div class="links-wrapper-item">
+            <div class="img_wrapper"><img src="./images/联系我们.png" alt=""></div>
+            <span class="item-name">联系我们</span>
+            <span class="item-english_name spaceOne">Contact Us</span>
+          </div>
+          <div class="links-wrapper-item">
+            <div class="img_wrapper"><img src="./images/版权声明.png" alt=""></div>
+            <span class="item-name">版权声明</span>
+            <span class="item-english_name spaceOne">Copyright </span>
+          </div>
+          <div class="links-wrapper-item">
+            <div class="img_wrapper"><img src="./images/网站地图.png" alt=""></div>
+            <span class="item-name">网站地图</span>
+            <span class="item-english_name">Website Map</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-company_desc">
+        <div class="company_desc-wrapper">
+          <span class="desc-name">© 2020 深圳市比特安科技有限公司</span>
+          <span>粤ICP备19041769号</span>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 

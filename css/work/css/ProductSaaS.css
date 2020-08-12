@@ -1,0 +1,483 @@
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote, p {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+}
+
+@media only screen and (min-width:1440px) and (max-width:1680px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width:1280px) and (max-width:1440px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (min-width:1024px) and (max-width:1280px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width:750px) and (max-width:1024px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media only screen and (min-width:0px) and (max-width:750px) {
+  html {
+    font-size: 10px;
+  }
+}
+html, body {
+  width: 100%;
+}
+
+body {
+  min-width: 1200px;
+}
+
+/* 导航栏和底部样式 */
+
+a {
+  text-decoration: none;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+.head-nav {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.head-nav-pic {
+  width: 16.35%;
+  position: absolute;
+  left: 10%;
+  top: 30%;
+}
+
+.head-nav-pic img {
+  width: 100%;
+}
+
+.head-nav-links {
+  /* margin-left: 30.416%; */
+  width: 68.11%;
+  float: right;
+  margin-right: 3rem;
+  display: flex;
+  align-items: center;
+  margin-top: 4.65rem;
+  margin-bottom: 2.9rem;
+}
+
+.head-nav-links ul {
+  width: 100%;
+  display: flex;
+}
+
+.links_item {
+  height: 3.75rem;
+  width: 7.8rem;
+  font-size: 1.7rem;
+  border-right: 1.5px solid black;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.6rem;
+}
+
+.links_item.platform {
+  width: 8.35rem;
+}
+
+.links_item.platform a {
+  margin-top: -0.3rem;
+}
+
+.links_item.mall {
+  width: 7.1rem;
+}
+
+.links_item.contactUs {
+  width: 8.6rem;
+}
+
+.links_item a {
+  color: black;
+}
+
+.section-pic img {
+  width: 100%;
+}
+
+.footer-nav {
+  width: 100%;
+  color: white;
+  background-color: #157c83;
+  padding-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-nav-links {
+  width: 100%;
+}
+
+.links-wrapper {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.links-wrapper-item {
+  display: flex;
+  width: 8rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img_wrapper {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.img_wrapper img {
+  width: 2rem;
+}
+
+.links-wrapper-item .item-name {
+  margin-top: 1.2rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+}
+
+.item-name.distanceOne {
+  letter-spacing: 0.2rem;
+}
+
+.item-name.distanceTwo {
+  letter-spacing: 0.6rem;
+}
+
+.links-wrapper-item .item-english_name {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.links-wrapper-item .item-english_name.spaceOne {
+  letter-spacing: 0.15rem;
+}
+
+.links-wrapper-item .item-english_name.spaceTwo {
+  letter-spacing: 0.25rem;
+}
+
+.footer-company_desc {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.company_desc-wrapper {
+  width: 67.08%;
+  margin-top: 3rem;
+  padding: 3rem 0;
+  font-size: 0.85rem;
+  border-top: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.desc-name {
+  margin-bottom: 0.6rem;
+}
+
+/* banner图 */
+
+.content-banner__img {
+  width: 100%;
+}
+
+.content {
+  font-size: 0;
+}
+
+/* 内容主体 */
+
+.content-main {}
+
+/* h2标题 */
+
+.content-main h2 {
+  font-size: 2.4rem;
+  font-family: "Microsoft YaHei";
+  line-height: 2.4rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* 第一部分 */
+
+/* 标题 */
+
+.interface-title {
+  margin-top: 6.2rem;
+  margin-bottom: 5rem;
+}
+
+/* 内容 */
+
+.interface-content {
+  display: flex;
+}
+
+/* 左边内容部分 */
+
+.interface-content__left {
+  position: relative;
+  width: 49%;
+  /* height: 30rem; */
+  margin-left: 6rem;
+  margin-right: 1rem;
+}
+
+.left-one {
+  width: 100%;
+  right: 0;
+}
+
+.left-two {
+  width: 88%;
+  position: absolute;
+  right: 0;
+  top: 9%;
+}
+
+.left-three {
+  width: 79%;
+  position: absolute;
+  right: 0;
+  top: 16%;
+}
+
+/* 右边 */
+
+.interface-content__right {
+  width: 43%;
+  margin-right: 6.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.content-right__img {
+  width: 21.57%;
+}
+
+.content-right__img img {
+  width: 100%;
+}
+
+.content-bottom {
+  margin-bottom: 1.25rem;
+}
+
+/* 第二部分：优势 */
+
+/* 标题 */
+
+.advantage-title {
+  margin-top: 5.75rem;
+  margin-bottom: 1.4rem;
+}
+
+/* 内容 */
+
+.advantage-content {
+  font-size: 1.65rem;
+  color: #000;
+  margin: 0 5.57rem;
+}
+
+.advantage-content h3 {
+  font-size: 2.4rem;
+  color: #016CA3;
+  font-weight: normal;
+}
+
+.advantage-content__text {
+  margin-bottom: 1rem;
+}
+
+/* 第三部分 */
+
+.competition-title {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+.competition-content__top {
+  background: #F2F2F2;
+  display: flex;
+  align-items: center;
+}
+
+.competition-content {
+  font-size: 1.65rem;
+}
+
+.content-top__left {
+  margin-right: 6.65rem;
+  margin-left: 11.5rem;
+}
+
+.content-top__left img {
+  width: 100%;
+}
+
+.content-top__left p {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.content-top__right {
+  padding-top: 5.5rem;
+  padding-bottom: 4.5rem;
+  width: 50.364%;
+  margin-right: 6.75rem;
+}
+
+.content-top__right p {
+  margin-bottom: 1.4rem;
+}
+
+/* 中间部分 */
+
+.competition-content__mid {
+  display: flex;
+  margin-top: 5.2rem;
+  margin-left: 6rem;
+  margin-bottom: 4.75rem;
+}
+
+.content-mid {
+  display: flex;
+  align-items: flex-end;
+}
+
+.content-mid p {
+  font-size: 1.5rem;
+  width: 54%;
+  margin-right: 1.5rem;
+}
+
+.content-mid img {
+  width: 40%;
+  margin-right: 0.7rem;
+}
+
+.competition-content__bottom {
+  display: flex;
+  margin: 0 5.5rem;
+  justify-content: space-between;
+}
+
+.content-bottom_desc {
+  width: 26.55%;
+}
+
+.content-bottom_desc img {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* 第四部分 */
+
+/* 标题 */
+
+.framework-title {
+  margin-top: 4.7rem;
+  margin-bottom: 4.45rem;
+}
+
+.framework-content {
+  text-align: center;
+  /* margin-left: 8.2rem; */
+}
+
+.framework-content img {
+  width: 77.396%;
+  margin-bottom: 4rem;
+}
+
+.framework-content__desc {
+  font-size: 1.5rem;
+  margin-right: 8.2rem;
+  margin-left: 5.2rem;
+}
+
+.framework-content__desc tr :first-child {
+  margin-bottom: 1rem;
+  min-width: 7.8rem;
+  text-align: center;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  text-align-last: justify
+}
+
+.content-desc__title {
+  color: #016CA3;
+}
+
+.content-desc__text {
+  text-align: left;
+}
+
+/* 第五部分 */
+
+/* 标题 */
+
+.experience-title {
+  margin-top: 4.6rem;
+}
+
+/* 内容 */
+
+.experience-content {
+  margin: 2.15rem 2.5rem 4rem 2.5rem;
+  text-align: center;
+}
+
+.experience-content img {
+  width: 100%;
+}
+
+.experience-content__top {
+  margin-bottom: 2.15rem;
+}
+
+.experience-content__mid {
+  margin-bottom: 3.7rem;
+}
