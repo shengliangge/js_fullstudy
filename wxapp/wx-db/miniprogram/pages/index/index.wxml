@@ -1,4 +1,4 @@
-<block wx:for="{{products}}" wx:key="index">
+<!-- <block wx:for="{{products}}" wx:key="index">
 	<van-card
 	 price="{{item.view}}"
 	 desc="{{item.color}}"
@@ -8,4 +8,13 @@
 	 bindtap="gotoDetail"
 	/>
 </block>
+-->
+<view class="m30">
+	<van-button
+	 block
+	 type="primary"
+	 bindtap="uploadAvatar"
+	>上传照片
+	</van-button>
+</view>
 

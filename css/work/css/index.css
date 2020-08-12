@@ -1,0 +1,226 @@
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-width: 1200px;
+}
+
+/* banner图 */
+
+.content-banner__img {
+  width: 100%;
+}
+
+.content {
+  font-size: 0;
+}
+
+/* 内容主体 */
+
+.content-main {}
+
+/* h2标题 */
+
+.content-main h2 {
+  font-size: 3rem;
+  font-family: "Microsoft YaHei";
+  font-weight: normal;
+  text-align: center;
+}
+
+/* 解决方案 */
+
+.content-main__solution {
+  /* border: 1px solid #000; */
+}
+
+/* 标题  */
+
+.solution-title {
+  /* border: 1px solid #000; */
+  margin-top: 70px;
+  margin-bottom: 80px;
+}
+
+/* 解决方案说明  */
+
+.solution-explain {
+  border-top: 1px solid #000;
+  padding-top: 95px;
+}
+
+/* 解决方案上半部分 */
+
+.solution-explain__top {
+  display: flex;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+/* 解决方案左边图片 */
+
+.solution-explain__top img {
+  width: 49%;
+}
+
+/* 解决方案右边文字 */
+
+.solution-explain__text {
+  width: 46%;
+  margin-left: 2.15rem;
+  margin-right: 3rem;
+}
+
+.solution-explain__text p {
+  font-size: 1.25rem;
+}
+
+/* 解决方案下半部分 */
+
+.solution-scheme {
+  margin: 3rem 2.5rem 0 2.5rem;
+}
+
+/* 中间两张图 */
+
+.solution-scheme-top {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.solution-scheme-top :first-child {
+  margin-right: 1rem;
+}
+
+.solution-scheme-top img {
+  width: 49.4%;
+}
+
+.solution-scheme-down {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 下面三张图 */
+
+.scheme-down__one {
+  width: 32%;
+}
+
+.scheme-down__two {
+  width: 32.5%;
+}
+
+.scheme-down__three {
+  width: 33.5%;
+}
+
+/* 产品及方案 */
+
+.product-title {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.product-content {
+  border-top: 1px solid #000;
+  display: flex;
+  justify-content: center;
+
+  padding-top: 4.5rem;
+}
+
+.product-content__left {
+  width: 48.125%;
+  margin-right: 2.75rem;
+}
+
+.product-content__left img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-content__right {
+  width: 40.37%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-content__right img {
+  width: 48.4%;
+}
+
+.content-bottom {
+  margin-bottom: 1.2rem;
+}
+/* 合作伙伴 */
+.partner-title{
+  margin-top: 4.25rem;
+  margin-bottom: 2rem;
+}
+.partner-content{
+  padding-top: 3.5rem;
+  border-top: 1px solid #000;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.partner-content__list{
+  /* border: 1px solid #000; */
+width: 18%;
+}
+.partner-content__list img{
+ width: 100%;
+}
+/* .content-main__product {
+  margin-left: 85px;
+  margin-right: 83px;
+}
+
+.product-content {
+  display: flex;
+}
+
+.product-content__left {
+  display: inline-block;
+}
+
+
+
+
+
+*/
+
+/* 奇数行 */
+
+/* .product-content__right :nth-child(odd) {
+  margin-right: 20px;
+} */
+
+/* 
+.partner-content__list {
+  display: inline-block;
+}
+.partner-content{
+  margin: 0 50px;
+}
+.partner-content__image {
+  width: 344px;
+  height: 220px;
+  margin-right: 20px;
+  margin-bottom: 35px;
+
+} */
