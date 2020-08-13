@@ -1,0 +1,9 @@
+<van-cell-group>
+	<van-fileld
+	 vlaue="{{title}}"
+	 placeholder="请输入项目名称"
+	 border="{{false}}"
+	 bind:change="changeTitle"
+	></van-fileld>
+</van-cell-group>
+
