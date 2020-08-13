@@ -9,12 +9,23 @@
 	/>
 </block>
 -->
-<view class="m30">
+<!-- <view class="m30">
 	<van-button
 	 block
 	 type="primary"
 	 bindtap="uploadAvatar"
 	>上传照片
 	</van-button>
-</view>
+</view> -->
+
+<van-cell-group>
+	<van-field
+	 value="{{ title }}"
+	 placeholder="请输入项目名称"
+	 border="{{ false }}"
+	 onChange
+	/>
+</van-cell-group>
+<van-button type="default" bindtap="upload">添加图片</van-button>
+<van-button type="primary" bindtap="createProject">提交</van-button>
 
