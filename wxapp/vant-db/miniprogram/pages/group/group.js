@@ -1,11 +1,11 @@
-// miniprogram/pages/group/group.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    groupList: []
   },
 
   /**
@@ -26,7 +26,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    const self = this
+    wx.cloud.callFunction({
+      name: 'getGroup',
+      data: {},
+      success(res) {
+        console.log(res)
+        self.setData({
+          groupList: res.result
+        })
+      },
+      fail(err) {
+        console.log(err)
+      }
+    })
   },
 
   /**

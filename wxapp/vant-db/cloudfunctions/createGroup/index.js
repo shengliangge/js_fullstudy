@@ -17,13 +17,14 @@ exports.main = async (event, context) => {
       deleted: false,
       updateTime: new Date()
     }
-  }).then(res => {
-    return db.collection('user-group').add({
-      data: {
-        groupId=res._id,
-        userId=userInfo.openId,
-        invalid: false
-      }
-    })
   })
+    .then(res => { //在把相关信息存入group中时再存入一些信息到用户群组
+      return db.collection('user-group').add({
+        data: {
+          groupId: res._id,  //存入group的_id
+          userId: userInfo.openId,  //存入当前用户的ID
+          invalid: false
+        }
+      })
+    })
 }
