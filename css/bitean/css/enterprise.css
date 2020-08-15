@@ -1,0 +1,120 @@
+@media screen and (min-width:1680px) and (max-width:1920px){
+  html {
+    font-size: 19.2px;
+  }
+}
+
+.banner {
+  width: 100%;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.intro {
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 4.427rem 0 2.08rem 0;
+}
+
+.content {
+  width: 90%;
+  padding: 67px 0 50px 0;
+  margin: 0 auto;
+}
+
+.intro .intro-desc {
+  background: #f2f2f2;
+  padding: 2.865rem 0 2.865rem 8.4rem;
+  overflow: hidden;
+}
+
+.intro .intro-desc .intro-desc-img {
+  width: 35.1%;
+  float: left;
+}
+
+.intro-desc-img img {
+  width: 100%;
+}
+
+.intro .intro-desc .intro-desc-text {
+  width: 55%;
+  float: left;
+  margin-left: 50px;
+  line-height: 2.9rem;
+}
+
+.intro-desc-text .textTitle {
+  font-size: 2.5rem;
+}
+
+.intro-desc-text .textContent {
+  font-size: 1.875rem;
+  line-height: 28px;
+}
+
+.intro-desc-text .hope {
+  font-size: 1.875rem;
+  margin: 0;
+}
+
+.honor {
+  width: 100%;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+
+.honor-content {
+  padding-bottom: 0;
+}
+
+.honor-content ul {
+  width: 100%;
+  padding: 0; 
+  overflow: hidden;
+}
+
+.honor-content ul li {
+  width: 25%;
+  float: left;
+  margin-bottom: 1.562rem;
+  list-style: none;
+}
+
+.honor-content ul li img { 
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.pro {
+  width: 100%;
+}
+
+.prod-title {
+  padding-top: 2.6rem;
+}
+
+.prod-content {
+  width: 91.9%;
+}
+
+.pro-content img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+
+
+

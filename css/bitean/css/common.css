@@ -1,0 +1,318 @@
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote, p {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1920px){
+  html {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1680px){
+  html {
+    font-size: 16.8px;
+  }
+}
+
+@media screen and (max-width: 1536px){
+  html {
+    font-size: 15.36px;
+  }
+}
+
+@media screen and (max-width: 1440px){
+  html {
+    font-size: 14.4px;
+  }
+}
+
+@media screen and (max-width: 1366px){
+  html {
+    font-size: 13.66px;
+  }
+}
+
+@media screen and (max-width: 1280px){
+  html {
+    font-size: 12.8px;
+  }
+}
+
+@media screen and (max-width: 1224px){
+  html {
+    font-size: 12.24px;
+  }
+}
+
+html, body {
+  width: 100%;
+}
+
+body {
+  min-width: 1200px;
+}
+
+/* 导航栏和底部样式 */
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* 顶部导航栏样式 */
+.head-nav {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.head-nav-pic {
+  width: 15.7rem;
+  position: absolute;
+  left: 10%;
+  top: 23%;
+}
+
+.head-nav-pic img {
+  width: 100%;
+}
+
+.head-nav-links {
+  float: right;
+  width: 66.5%;
+  margin-right: 3.25rem;
+  display: flex;
+  align-items: center;
+  margin-top: 4.6rem;
+  margin-bottom: 2.4rem;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex; 
+  align-items: center;
+ 
+}
+
+.head-nav-links ul {
+  width: 100%;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex; 
+}
+/* 顶部每个导航item样式 */
+.links_item {
+  height: 3.4rem;
+  width: 7.8rem;
+  font-size: 1.7rem;
+  border-right: 1.5px solid black;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex; 
+  justify-content: center;
+  padding-top: 0.6rem;
+}
+
+.links_item.platform {
+  width: 8.35rem;
+}
+
+.links_item.platform a {
+  margin-top: -0.8rem;
+}
+
+.links_item.mall {
+  width: 7.1rem;
+}
+
+.links_item.contactUs {
+  width: 8.6rem;
+}
+
+.links_item a {
+
+  color: black;
+}
+
+/* 顶部导航栏下面的图片模块 */
+.section-pic {
+  position: relative;
+}
+
+.section-pic img {
+  width: 100%;
+}
+
+.pic-slogan {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/联系我们标语背景图.png);
+  padding: 2.4rem 2.9rem 0.7rem;
+  font-size: 3.4rem;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.slogan-one {
+  color: #FF9600;
+}
+
+.slogan-one::after {
+  content: '';
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: white;
+  left: 49.4%;
+  top: 48%;
+}
+
+.theUrl {
+  font-size: 1.2rem;
+  text-align: right;
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+
+
+/* 底部导航栏样式 */
+.footer-nav {
+
+  width: 100%;
+  color: white;
+  background-color: #157c83;
+  padding-top: 1.75rem;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex; 
+  flex-direction: column;
+}
+.footer-nav-links {
+  width: 100%;
+}
+
+.links-wrapper {
+  margin: 0 auto;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex; 
+  justify-content: center;
+}
+
+/* 底部图标栏 */
+.links-wrapper-item {
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex; 
+  width: 8rem;
+  align-items: center;
+  flex-direction: column;
+  min-width:120px;
+}
+
+.img_wrapper {
+  width: 4rem;
+  height: 4rem;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.img_wrapper img {
+  width: 2rem;
+}
+
+.links-wrapper-item .item-name {
+  margin-top: 1.2rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+}
+
+.item-name.distanceOne {
+  letter-spacing: 0.2rem;
+}
+
+.item-name.distanceTwo {
+  letter-spacing: 0.6rem;
+}
+.links-wrapper a{
+  color: #fff;
+}
+.links-wrapper-item .item-english_name {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.links-wrapper-item .item-english_name.spaceOne {
+  letter-spacing: 0.15rem;
+}
+
+.links-wrapper-item .item-english_name.spaceTwo {
+  letter-spacing: 0.25rem;
+}
+
+/* 底部公司信息  */
+.footer-company_desc {
+  flex: 1;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex; 
+  justify-content: center;
+}
+
+.company_desc-wrapper {
+  width: 67.08%;
+  margin-top: 3rem;
+  padding: 3rem 0;
+  font-size: 0.85rem;
+  border-top: 1px solid white;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.desc-name {
+  margin-bottom: 0.6rem;
+}

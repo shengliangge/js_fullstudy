@@ -1,0 +1,118 @@
+
+/* 顶部导航栏下面的图片模块 */
+.section-pic img {
+  width: 100%;
+}
+
+/* main */
+.main{
+  width: 100%;
+  padding: 4.2rem 0rem 3.4rem;
+}
+.main-title{
+  width: 87.03%;
+  margin: 0 auto;
+  font-size: 2.4rem;
+  text-align: center;
+  border-bottom: 1px solid ;
+  padding-bottom: 2rem;
+}
+.content-name{
+  width: 100%;
+  margin: 1.2rem 0 0.5rem;
+  overflow: hidden;
+  
+}
+.name_desc{
+  width: 54.11%;
+  height: 32.95rem;
+  padding: 3.8rem 0 0 7.65rem;
+  font-size: 0;
+  border-right: 1px solid #a7a7a7;
+  float: left;
+}
+.name_desc .span{
+  display: block;
+  font-weight: bold; font-size: 3rem;
+}
+.name_desc span.span-one{
+  font-size: 2.4rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.4rem;
+  font-weight: normal;
+
+}
+.span-two{
+  font-size:1.8rem ;
+}
+.name_desc .span-two.three{
+  margin-left: 2rem;
+}
+
+.name_pic{
+  width: 36.66%;
+  margin-right: 6.9rem;
+  margin-top: 2.9rem;
+  float: right;
+
+}
+.name_pic img{
+  width: 100%;
+}
+
+.section{
+  width: 100%;
+}
+.section-title{
+  width: 87.03%;
+  padding: 0 0 1.1rem 2.25rem;
+  font-size: 2.4rem;
+  border-bottom: 1px solid #000;
+  margin: 0 auto;
+}
+.configuration-main{
+ padding: 3.5rem 0 0 11.05rem;
+ width: 100%;
+ flex-wrap: wrap;
+ display: flex;
+}
+.configuration_item{
+width: 31%;
+display: flex;
+margin-bottom: 4rem;    
+}
+.configuration_item.longer{
+ width: 38%;
+}
+.item-pic{
+width: 4.75rem;
+margin-right: 2rem;
+}
+.item-pic img{
+ width: 100%;
+}
+.item-desc{
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+}
+.item-desc span{
+font-size: 1.8rem;
+text-align: left;
+}
+.small{
+font-size: 1.5rem !important;
+}
+.detail-main,
+.function-main{
+width: 100%;
+padding: 3.5rem 0 2.8rem;
+text-align: center;
+}
+.detail-main img{
+width: 58.43%;
+}
+.function-main img{
+width: 84.74%;
+}

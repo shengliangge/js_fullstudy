@@ -1,0 +1,77 @@
+/* 顶部导航栏下面的图片模块 */
+.section-pic {
+  position: relative;
+}
+.section-pic img {
+  width: 100%;
+}
+.pic-slogan {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('../img/contact-us-backgroud.png');
+  padding: 2.4rem 2.9rem 0.7rem;
+  font-size: 3.4rem;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+}
+.slogan-one {
+  color: #FF9600;
+}
+.slogan-one::after {
+  content: '';
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: white;
+  left: 49.4%;
+  top: 48%;
+}
+.theUrl {
+  font-size: 1.2rem;
+  text-align: right;
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+
+/* main */
+.main {
+  width: 100%;
+  padding: 0 17.08%;
+}
+.main-title {
+  margin: 5.8rem 0 4.25rem 0;
+  text-align: center;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+}
+.company-map {
+  width: 100%;
+  text-align: right;
+}
+.company-map img {
+  width:93.08%;
+}
+/* 二维码 */
+.qr-code{
+  position: absolute;
+  width: 10rem;
+  left: 38rem;
+  top:2rem;
+}
+.contact-information,
+.contact-information img{
+  width: 100%;
+}
+.contact-information {
+  margin-top: 4.8rem;
+  margin-bottom: 9.55rem;
+  font-size: 2.1rem;
+  position: relative;
+}
+.contact-information div:first-child{
+  margin-bottom: 2rem;
+}

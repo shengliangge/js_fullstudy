@@ -1,0 +1,256 @@
+@media screen and (min-width:1680px) and (max-width:1920px){
+  html {
+    font-size: 19.2px;
+  }
+}
+
+.banner {
+  width: 100%;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.advantage {
+  width: 100%;
+}
+
+.advantage-title {
+  text-align: center;
+  padding: 6.51rem 0 5.78rem 0;
+  font-size: 2.5rem;
+}
+
+.advantage-content {
+  width: 84.4%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.advantage-content-img {
+  width: 39.7%;
+  float: left;
+}
+
+.advantage-content-img img {
+  width: 100%;
+}
+
+.advantage-content-text {
+  margin-top: 1.1rem;
+  margin-left: 6.12%;
+  width: 54.18%;
+  font-size: 1.5625rem;
+  float: left;
+}
+
+.advantage-content-text p {
+  line-height: 2.5rem;
+  padding: 0.95rem 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-left: 5.26rem;
+  margin-bottom: 0.52rem;
+}
+
+.platforms {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10.417rem;
+  margin-bottom: 4.17rem;
+}
+
+.more {
+  width: 8.26rem;
+  height: 2.187rem;
+  background-color: #d9d9d9;
+  float: right;
+  margin-right: 4.687rem;
+  margin-top: 0.781rem;
+  border-radius: 1.5rem;
+  -moz-border-radius: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 2.187rem;
+}
+
+.line {
+  width: 92.5%;
+  height: 1px;
+  margin: 0 auto;
+  background-color: #000;
+}
+
+.platform-content {
+  overflow: hidden;
+}
+
+.platform-content-img {
+  position: relative;
+  width: 47.9%;
+  height: 32rem;
+  margin-left: 6.25rem;
+  margin-top: 3.125rem;
+  float: left;
+}
+
+.form1 {
+  position: absolute;
+  width: 98.6%;
+}
+
+.form2 {
+  position: absolute;
+  width: 77%;
+  top: 10%;
+  left: 10.26rem;
+}
+
+.platform-content-text {
+  width: 22.2%;
+  margin-top: 2.6rem;
+  margin-left: 3.125rem;
+  float: left;
+}
+
+.text-title {
+  font-size: 3rem;
+  width: 35.42rem;
+}
+
+.text-title span {
+  display: block;
+  padding: 0.1rem 0;
+}
+
+.text-content ul {
+  width: 38rem;
+  padding: 0;
+  margin-left: 1rem;
+}
+
+.text-content li {
+  list-style-type: disc;
+}
+
+.text-content {
+  margin-top: 1rem;
+  font-size: 1.5625rem;
+}
+
+.ctrBoard {
+  width: 100%;
+  margin-bottom: 4.427rem;
+}
+
+.ctrBoard-content {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 20px;
+  font-size: 0;
+}
+
+.ctrBoard-content-item {
+  width: 33%;
+  float: left;
+  padding: 0 6px;
+}
+
+.ctrBoard-content-item img {
+  width: 100%;
+  height: 27.55rem;
+  margin: 0 auto;
+  display: block;
+}
+
+.ctrBoard-content-item p {
+  font-size: 1.875rem;
+  text-align: center;
+  line-height: 3.646rem;
+}
+
+.application {
+  padding-bottom: 3.5rem;
+}
+
+.application-content {
+  width: 88%;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 5.208rem;
+}
+
+.application-content-item {
+  width: 33.3%;
+  height: 34.375rem;
+  float: left;
+  position: relative;
+}
+
+.application-content-item img {
+  margin: 0 auto;
+  display: block;
+}
+
+.application-content-item p {
+  width: 100%;
+  font-size: 3.125rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+
+.content {
+  font-size: 0;
+}
+
+/* 内容主体 */
+
+
+/* h2标题 */
+
+.content-main h2 {
+  font-size: 2.4rem;
+  font-family: "Microsoft YaHei";
+  font-weight: normal;
+line-height: 2.4rem;
+  text-align: center;
+}
+
+
+/* 合作伙伴 */
+/* 标题 */
+.partner-title {
+  margin-top: 5.35rem;
+  margin-bottom: 4.8rem;
+}
+/* 内容部分 */
+.partner-content {
+  padding: 2.35rem 2rem 3.385rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.partner-content__list {
+  width: 18.96%;
+}
+
+.list-bottom {
+  margin-bottom: 1.65rem;
+}
+
+.partner-content__list img {
+  width: 100%;
+}

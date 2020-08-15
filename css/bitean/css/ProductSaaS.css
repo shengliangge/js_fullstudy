@@ -1,0 +1,290 @@
+/* banner图 */
+
+.content-banner__img {
+  width: 100%;
+}
+
+.content {
+  font-size: 0;
+}
+
+/* 内容主体 */
+
+
+/* h2标题 */
+
+.content-main h2 {
+  font-size: 2.4rem;
+  font-family: "Microsoft YaHei";
+  line-height: 2.4rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* 第一部分 */
+
+/* 标题 */
+
+.interface-title {
+  margin-top: 6.2rem;
+  margin-bottom: 5rem;
+}
+
+/* 内容 */
+
+.interface-content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* 左边内容部分 */
+
+.interface-content__left {
+  position: relative;
+  width: 49%;
+  /* height: 30rem; */
+  margin-left: 6rem;
+  margin-right: 1rem;
+}
+
+.left-one {
+  width: 100%;
+  right: 0;
+}
+
+.left-two {
+  width: 88%;
+  position: absolute;
+  right: 0;
+  top: 9%;
+}
+
+.left-three {
+  width: 79%;
+  position: absolute;
+  right: 0;
+  top: 16%;
+}
+
+/* 右边 */
+
+.interface-content__right {
+  width: 43%;
+  margin-right: 6.3rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.content-right__img {
+  width: 21.57%;
+}
+
+.content-right__img img {
+  width: 100%;
+}
+
+.content-bottom {
+  margin-bottom: 1.25rem;
+}
+
+/* 第二部分：优势 */
+
+/* 标题 */
+
+.advantage-title {
+  margin-top: 5.75rem;
+  margin-bottom: 1.4rem;
+}
+
+/* 内容 */
+
+.advantage-content {
+  font-size: 1.65rem;
+  color: #000;
+  margin: 0 5.57rem;
+}
+
+.advantage-content h3 {
+  font-size: 2.4rem;
+  color: #016CA3;
+  font-weight: normal;
+}
+
+.advantage-content__text {
+  margin-bottom: 1rem;
+}
+
+/* 第三部分 */
+
+.competition-title {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+.competition-content__top {
+  background: #F2F2F2;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+
+.competition-content {
+  font-size: 1.65rem;
+}
+
+.content-top__left {
+  margin-right: 6.65rem;
+  margin-left: 11.5rem;
+}
+
+.content-top__left img {
+  width: 100%;
+}
+
+.content-top__left p {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.content-top__right {
+  padding-top: 5.5rem;
+  padding-bottom: 4.5rem;
+  width: 50.364%;
+  margin-right: 6.75rem;
+}
+
+.content-top__right p {
+  margin-bottom: 1.4rem;
+}
+
+/* 中间部分 */
+
+.competition-content__mid {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 5.2rem;
+  margin-left: 6rem;
+  margin-bottom: 4.75rem;
+}
+
+.content-mid {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: flex-end;
+}
+
+.content-mid p {
+  font-size: 1.5rem;
+  width: 54%;
+  margin-right: 1.5rem;
+}
+
+.content-mid img {
+  width: 40%;
+  margin-right: 0.7rem;
+}
+
+.competition-content__bottom {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin: 0 5.5rem;
+  justify-content: space-between;
+}
+
+.content-bottom_desc {
+  width: 26.55%;
+}
+
+.content-bottom_desc img {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* 第四部分 */
+
+/* 标题 */
+
+.framework-title {
+  margin-top: 4.7rem;
+  margin-bottom: 4.45rem;
+}
+
+.framework-content {
+  text-align: center;
+  /* margin-left: 8.2rem; */
+}
+
+.framework-content img {
+  width: 77.396%;
+  margin-bottom: 4rem;
+}
+
+.framework-content__desc {
+  font-size: 1.5rem;
+  margin-right: 8rem;
+  margin-left: 5.2rem;
+}
+
+.framework-content__desc tr :first-child {
+  margin-bottom: 1rem;
+  min-width: 7.8rem;
+  text-align: center;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  text-align-last: justify
+}
+
+.content-desc__title {
+  color: #016CA3;
+}
+
+.content-desc__text {
+  text-align: left;
+}
+
+/* 第五部分 */
+
+/* 标题 */
+
+.experience-title {
+  margin-top: 4.6rem;
+}
+
+/* 内容 */
+
+.experience-content {
+  margin: 2.15rem 2.5rem 4rem 2.5rem;
+  text-align: center;
+}
+
+.experience-content img {
+  width: 100%;
+}
+
+.experience-content__top {
+  margin-bottom: 2.15rem;
+}
+
+.experience-content__mid {
+  margin-bottom: 3.7rem;
+}

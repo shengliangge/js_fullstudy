@@ -1,0 +1,55 @@
+/* banner图 */
+
+.content-banner__img {
+  width: 100%;
+}
+
+.content {
+  font-size: 0;
+}
+
+/* 内容主体 */
+
+
+/* h2标题 */
+
+.content-main h2 {
+  font-size: 2.4rem;
+  font-family: "Microsoft YaHei";
+  font-weight: normal;
+line-height: 2.4rem;
+  text-align: center;
+}
+
+
+/* 合作伙伴 */
+/* 标题 */
+.partner-title {
+  margin-top: 5.35rem;
+  margin-bottom: 1.8rem;
+
+}
+/* 内容部分 */
+.partner-content {
+  border-top: 1px solid #000;
+  padding: 2.35rem 2rem 7.5rem 2rem;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.partner-content__list {
+  width: 18.96%;
+}
+
+.list-bottom {
+  margin-bottom: 1.65rem;
+}
+
+.partner-content__list img {
+  width: 100%;
+}
