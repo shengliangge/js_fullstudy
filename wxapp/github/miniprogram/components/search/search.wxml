@@ -1,0 +1,12 @@
+<view class="van-search">
+	<view class="van-serch__field">
+		<van-field
+		 clearable
+		 type="search"
+		 left-icon="search"
+		 placeholder="{{ placeholder }}"
+		 bind:change="onChange"
+		/>
+	</view>
+</view>
+

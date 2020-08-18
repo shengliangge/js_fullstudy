@@ -16,6 +16,11 @@ exports.main = async (event, context) => {
       deleted: false
     }).get()
     if (oneGroup.data.length > 0) {
+      const userInfo = await db.collection('group-user').where({
+        openId: oneGroup.data[0].createBy
+      }).get()
+      oneGroup.data[0].createBy = userInfo.data[0]
+      oneGroup.data[0].relateUserGroupId = groupList.data[i]._id
       returnResult.push(oneGroup.data[0])
     }
   }
