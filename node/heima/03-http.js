@@ -30,6 +30,7 @@ server.on('request', function (request,response) {
   response.write('hello')
   response.write('node js')
   response.end()
+  
 })
 // 4.绑定端口号，启动服务器
 server.listen(3000, function () {
