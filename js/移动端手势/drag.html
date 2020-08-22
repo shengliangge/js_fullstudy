@@ -1,0 +1,61 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  }
+</style>
+<div class="box"></div>
+
+
+<script>
+  // tap点击
+  // fastClick
+  // 移动端的click有延迟 所以要自己实现
+  const box = document.querySelector(".box")
+  box.addEventListener('click', () => {
+    console.log('click start');
+  })
+  box.addEventListener('touchstart', () => {
+    console.log('自己的tap事件');
+  })
+  box.addEventListener("mousedown", (e) => {
+    console.log('tpa触发了')
+    let time = setTimeout(() => {
+      console.log('长按发生');
+    }, 500)
+    let startX = e.clientX, startY = e.clientY
+    function handleMove(event) {
+      // box.style.transform = `translate3d(${event.pageX}px,${event.pageY}px,0)`
+      let endX = event.clientX, endY = event.clientY;
+      let diffX = endX - startX, diffY = endY - startY;
+      // 如果移动了10px
+      // console.log(diffX)
+      // console.log(diffY)
+      if (diffX ** 2 + diffY ** 2 > 100) {
+        console.log('pan发生了');
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+          // console.log('left or right')
+          if (diffX > 0) {
+            console.log('右滑动');
+          } else {
+            console.log('左滑动');
+          }
+        }
+      }
+    }
+
+    document.addEventListener("mousemove", handleMove)
+    function handleUp() {
+      clearTimeout(time)
+      document.removeEventListener('mousemove', handleMove)
+      document.removeEventListener('mouseup', handleUp)
+    }
+    document.addEventListener("mouseup", handleUp)
+  })
+
+
+</script>
