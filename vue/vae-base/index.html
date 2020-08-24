@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.common.dev.js"></script>
+</head>
+<style>
+  .red {
+    color: red;
+  }
+</style>
+
+<body>
+  <div id="app">
+    <!-- <div v-show="isSure">小翔哥很帅</div>
+    <div v-else>铜锣湾</div>
+    <h1 v-if="show">
+      你好
+    </h1>
+    <div class="item" v-for="user in users" :key="index">
+      <p>{{user.name}} - {{user.age}}</p>
+    </div> -->
+
+    <!-- <div class="msg">
+      <span>{{message}}</span><br />
+      <span v-text="message"></span><br />
+      <span v-html="message"></span>
+    </div> -->
+    <!-- <p>{{count}}</p>
+    <button v-on:click="num">+</button>
+    <button @click="re">-</button> -->
+    <!-- <div class="model">
+      <p>{{message}}</p>
+      <p>v-model:
+        <input type="text" value="" v-model="message">
+      </p>
+    </div> -->
+    <!-- <div class="pic">
+      <img v-bind:src="imgSrc" alt="">
+    </div> -->
+    <!-- <div v-bind:class="{ red: isActive }" :class="[className1,className2]" v-on:click="change">明国</div> -->
+    <div v-cloak>{{message}}</div>
+    <div v-once>{{message}}</div>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        className1: 'active',
+        className2: 'wrapper',
+        message: 'Hello world',
+        isSure: true,
+        show: false,
+        isActive: true,
+        list: ['a', 'b', 'c', 'd'],
+        users: [
+          { name: '浩南', gender: '女', age: 21 },
+          { name: '蜗牛', gender: '男', age: 18 },
+          { name: '元隆', gender: '女', age: 24 }
+        ],
+        imgSrc: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&fm=26&gp=0.jpg',
+        count: 0
+      },
+      methods: {
+        change() {
+          this.isActive = !this.isActive
+        },
+        num() {
+          this.count++;
+        }
+      },
+      beforeCreate() {
+        console.log('before');
+      },
+      created() {
+        console.log('created');
+      },
+      beforeMount() {
+        console.log('beforeMount');
+      },
+      mounted() {
+        console.log('mounted');
+      },
+      beforeUpdate() {
+        console.log('beforeUpdate');
+      },
+      update() {
+        console.log('update');
+      },
+      beforeDestroy() {
+        console.log('beforeDestroy');
+      },
+      destroyed() {
+        console.log('destroyed');
+      }
+    })
+  </script>
+</body>
+
+</html>
