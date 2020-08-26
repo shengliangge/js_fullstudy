@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.common.dev.js"></script>
+  <title>Document</title>
+</head>
+<h1>component</h1>
+<div id="app">
+<wn></wn>
+</div>
+
+<body>
+  <script>
+    Vue.component('wn', {
+      template: `<div style="font-size:20px">我是一个组件</div>`
+    })
+    let app=new Vue({
+      el:'#app',
+      data:{}
+    })
+  </script>
+</body>
+
+</html>

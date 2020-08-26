@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.common.dev.js"></script>
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      height: 100%;
+      background-color: #fff;
+      color: #000;
+      font-size: 62.5%;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      height: 100%;
+      font-size: 1.4rem;
+    }
+
+    button {
+      border: none;
+      color: #fff;
+      background: #42b983;
+      font: inherit;
+      padding: 0.5em 1em;
+      font-size: 1.8rem;
+      border-radius: 0.3em;
+      appearance: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .modal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 998;
+      background-color: rgb(44, 44, 44);
+      opacity: .6;
+    }
+
+    .modal {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: fit-content;
+      height: fit-content;
+      text-align: center;
+      min-width: 22em;
+      padding: 2rem;
+      border-radius: 1rem;
+      background-color: #fff;
+      z-index: 999;
+      margin: auto;
+    }
+
+    .modal h1 {
+      margin: 0 0 1rem;
+    }
+
+    .fade-enter,
+    .fade-leave-to {
+      opacity: 0;
+    }
+
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity 0.4s linear
+    }
+
+    .pop-enter,
+    .pop-leave-to {
+      opacity: 0;
+      transform: scale(0.3)
+    }
+
+    .pop-enter-active,
+    .pop-leave-active {
+      transition: transform 0.4s cubic-bezier(0.5, 0, 0.5, 1),opacity .4s linear;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div id="app">
+    <button class="button" @click="isShow">show Modal</button>
+    <transition name='fade' appear>
+      <div class="modal-overlay" v-if="showModal" @click="isShow"></div>
+
+    </transition>
+    <transition name='pop' appear>
+      <div v-if="showModal" class="modal">
+        <h1>Vue Transition</h1>
+        <p> 领先的 Web 技术教程 - 全部免费</p>
+        <button class="button">Hid modal</button>
+      </div>
+    </transition>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          showModal: true
+        }
+      },
+      methods: {
+        isShow() {
+          this.showModal = !this.showModal
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
