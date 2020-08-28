@@ -11,6 +11,25 @@ Vue.use(VueRouter)
     component: Home
   },
   {
+    path: '/Main',
+    name: 'Main',
+    component: ()=>import('@/views/Main.vue')
+  },
+  {
+    path: '/Detail',
+    name: 'Detail',
+    component: ()=>import('@/views/Detail.vue')
+  },
+  {
+    path: '/methods',
+    name: 'methods',
+    component: ()=>import('@/views/Methods.vue')
+  },  {
+    path: '/watch',
+    name: 'watch',
+    component: ()=>import('@/views/Watch.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
