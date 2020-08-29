@@ -19,8 +19,8 @@
     <div class="feature">
       <div class="group">
         明日：
-        <span class="tm">白天：{{Forcast[1].dayTemp}}{{Forcast[1].dayWeather}}</span>
-        <span class="tm">夜间：{{Forcast[1].nightTemp}}{{Forcast[1].nightWeather}}</span>
+        <span class="tm">白天：{{Forcast[1].dayTemp}}{{Forcast[1].dayWeather}}{{Forcast[1].dayWeather}}</span>
+        <span class="tm">夜间：{{Forcast[1].nightTemp}}{{Forcast[1].dayWeather}}{{Forcast[1].nightWeather}}</span>
       </div>
       <div class="group">
         后天：
