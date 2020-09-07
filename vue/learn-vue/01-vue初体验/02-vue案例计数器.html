@@ -16,11 +16,13 @@
   <script src="../js/vue.js"></script>
   <script>
     //语法糖：简写
+    // 做了代理proxy
+    const obj= {
+        counter: 0
+      }
     const app = new Vue({
       el: '#app',
-      data: {
-        counter: 0
-      },
+      data:obj,
       methods: {
         add() {
           this.counter++
