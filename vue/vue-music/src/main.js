@@ -3,8 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './static/css/reset.styl'
-Vue.config.productionTip = false
+import './static/css/plugin.styl'
 
+Vue.config.productionTip = false
+import { Toast } from '@/common/js/plugin'
+Vue.use(Toast)
 new Vue({
   router,
   store,

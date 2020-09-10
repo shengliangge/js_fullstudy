@@ -12,36 +12,42 @@
       </div>
       <div class="menu">
         <ul>
-          <li>
-            <router-link to="/user">
+          <li @click="showToast">
+            <a >
               <i class="iconfont">&#xe716;</i>
               <span>个人中心</span>
-            </router-link>
+            </a>
           </li>
           <li>
-            <router-link to="/user">
+            <a >
               <i class="iconfont">&#xe716;</i>
               <span>个人中心</span>
-            </router-link>
+            </a>
           </li>
         </ul>
       </div>
     </div>
-    <div v-show="showSidebar" class="sidebar_mask"></div>
+    <div v-show="showSidebar" class="sidebar_mask" @click="hidebar"></div>
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters } from "vuex";
 export default {
   data() {
-    return {
- 
-    };
+    return {};
   },
-  computed:{
-    ...mapGetters(['showSidebar'])
-  }
+  methods: {
+    hidebar() {
+      this.$store.dispatch("setShowSidebar", false);
+    },
+    showToast(){
+      this.$toast('该功能暂为开放。。。')
+    }
+  },
+  computed: {
+    ...mapGetters(["showSidebar"]),
+  },
 };
 </script>
 
