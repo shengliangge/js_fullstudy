@@ -1,5 +1,5 @@
 let Toast = {}
-Toast.install = function(Vue, options) {
+Toast.install = function (Vue, options) {
   let opt = {
     defaultType: 'center', // 默认显示位置
     duration: '1500' // 持续的时间
@@ -13,9 +13,11 @@ Toast.install = function(Vue, options) {
     if (type) {
       opt.defaultType = type // 如果传了type，那么就使用该type作为位置展示
     }
-
+    if (document.getElementsByClassName('vue-toast').length) {
+      return
+    }
     let toastTpl = Vue.extend({
-      template: '<div class="vue-toast toast-'+ opt.defaultType +'">'+ tips +'</div>'
+      template: '<div class="vue-toast toast-' + opt.defaultType + '">' + tips + '</div>'
     })
     let tpl = new toastTpl().$mount().$el;
     document.body.appendChild(tpl)

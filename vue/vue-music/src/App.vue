@@ -5,25 +5,34 @@
       <span slot="content">我的音乐</span>
       <i class="iconfont" slot="right-icon">&#xe716;</i>
     </v-header>
-    <!-- <router-view/> -->
+    <v-tab></v-tab>
+    <keep-alive>
+      <router-view />
+    </keep-alive>
     <v-sidebar></v-sidebar>
   </div>
 </template>
 <script>
 import header from "@/components/header";
 import sidebar from "@/components/sidebar";
+import tab from "@/components/tab";
 export default {
   components: {
     "v-header": header,
     "v-sidebar": sidebar,
+    "v-tab": tab,
   },
 };
 </script>
 <style lang="stylus">
 @font-face {
-  font-family: 'iconfont'; /* project id 2052924 */
-  src: url('//at.alicdn.com/t/font_2052924_i7emdiwpf4b.eot');
-  src: url('//at.alicdn.com/t/font_2052924_i7emdiwpf4b.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_2052924_i7emdiwpf4b.woff2') format('woff2'), url('//at.alicdn.com/t/font_2052924_i7emdiwpf4b.woff') format('woff'), url('//at.alicdn.com/t/font_2052924_i7emdiwpf4b.ttf') format('truetype'), url('//at.alicdn.com/t/font_2052924_i7emdiwpf4b.svg#iconfont') format('svg');
+  font-family: 'iconfont';  /* project id 2052924 */
+  src: url('//at.alicdn.com/t/font_2052924_7b1hed3vp2c.eot');
+  src: url('//at.alicdn.com/t/font_2052924_7b1hed3vp2c.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_2052924_7b1hed3vp2c.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_2052924_7b1hed3vp2c.woff') format('woff'),
+  url('//at.alicdn.com/t/font_2052924_7b1hed3vp2c.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_2052924_7b1hed3vp2c.svg#iconfont') format('svg');
 }
 
 html, body {

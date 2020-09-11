@@ -1,0 +1,77 @@
+<template>
+  <div class="search-box">
+    <i class="iconfont">&#xe7ea;</i>
+    <input type="text" ref="query" class="box" :placeholder="placeholder" v-model="query" />
+    <i class="iconfont icon-dismiss" v-show="query" @click="clear">&#xe612;</i>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    placeholder: {
+      type: String,
+      default: "搜索歌曲、歌手",
+    },
+  },
+  data() {
+    return {
+      query: "",
+    };
+  },
+  methods: {
+    clear() {
+      this.query = "";
+    },
+    blur() {
+      this.$refs.query.blur();
+    },
+    setQuery(query) {
+      this.query = query;
+    },
+    created() {
+      this.$watch('query', (newQuery, oldQuery) => {
+        console.log('执行');
+        
+        console.log(newQuery);
+        console.log(oldQuery);
+      });
+    },
+  },
+};
+</script>
+
+<style lang="stylus" scoped>
+@import '../assets/css/function.styl';
+
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 px2rem(14);
+  height: px2rem(74);
+  background: #2f3054;
+  border-radius: 6px;
+  box-sizing: border-box;
+
+  .iconfont {
+    font-size: 24px;
+    color: #6b6a6a;
+  }
+
+  .box {
+    flex: 1;
+    margin: 0 5px;
+    line-height: px2rem(36);
+    background: #2f3054;
+    color: #fff;
+    font-size: 14px;
+    outline: 0;
+  }
+
+  .icon-dismiss {
+    font-size: 20px;
+    margin-right: px2rem(10);
+  }
+}
+</style>
