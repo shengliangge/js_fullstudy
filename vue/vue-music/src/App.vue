@@ -27,14 +27,13 @@ export default {
 <style lang="stylus">
 @font-face {
   font-family: 'iconfont';  /* project id 2052924 */
-  src: url('//at.alicdn.com/t/font_2052924_7b1hed3vp2c.eot');
-  src: url('//at.alicdn.com/t/font_2052924_7b1hed3vp2c.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_2052924_7b1hed3vp2c.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_2052924_7b1hed3vp2c.woff') format('woff'),
-  url('//at.alicdn.com/t/font_2052924_7b1hed3vp2c.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_2052924_7b1hed3vp2c.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_2052924_bu3j69x4syw.eot');
+  src: url('//at.alicdn.com/t/font_2052924_bu3j69x4syw.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_2052924_bu3j69x4syw.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_2052924_bu3j69x4syw.woff') format('woff'),
+  url('//at.alicdn.com/t/font_2052924_bu3j69x4syw.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_2052924_bu3j69x4syw.svg#iconfont') format('svg');
 }
-
 html, body {
   line-height: 1;
   font-family: PingFang SC, STHeitiSC-Light, Helvetica-Light, arial, sans-serif;
