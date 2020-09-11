@@ -1,7 +1,5 @@
 <template>
-  <div class="home">
-    <p>我是首页</p>
-  </div>
+  <div class="footer">Copyright 2020 地质云知识图谱</div>
 </template>
 
 <script>
