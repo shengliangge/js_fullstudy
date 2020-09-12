@@ -58,10 +58,12 @@ export default {
     ...mapGetters(["searchHistory"]),
   },
   methods: {
-    ...mapActions(["deleteSearchHistory", "deleteAll", "saveSearchHistory"]),
-    saveSearch() {
+    ...mapActions(["deleteSearchHistory", "deleteAll", "saveSearchHistory","selectPlaySong"]),
+    saveSearch(song) {
       //保存历史记录
       this.saveSearchHistory(this.query);
+      //播放音乐
+      this.selectPlaySong(song);
     },
     _getHoyKey() {
       //获取热搜

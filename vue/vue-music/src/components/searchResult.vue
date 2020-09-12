@@ -102,7 +102,7 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '../assets/css/function.styl';
+@import '../assets/css/function.styl'; 
 
 .suggest {
   height: 100%;
