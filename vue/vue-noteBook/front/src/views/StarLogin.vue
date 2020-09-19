@@ -12,7 +12,7 @@
         <input type="password" id="userpwd" v-model="userpwd" />
       </div>
       <p class="forgot-pwd">忘记密码</p>
-      <div class="sign">登录</div>
+      <div class="sign" @click="login">登录</div>
     </div>
     <p class="register" @click="register">新用户？点击这里注册</p>
   </div>
@@ -50,15 +50,20 @@ export default {
         },
       })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           if (res.data.code === "80000") {
             //拿到后端返回的用户信息（包含用户名和昵称）存到本地
-            this.$toast(res.data.mess);
-            this.login();
+            console.log(res.data);
+            
+            sessionStorage.setItem("userInfo", JSON.stringify(res.data.r));
+            //调到首页
+            this.$router.push({ path: "/noteClass" });
+            this.$toast(res.data.msg);
           } else {
-            this.$toast(res.data.mess);
+            this.$toast(res.data.msg);
           }
         })
+        
         .catch((err) => {
           console.log(err);
         });

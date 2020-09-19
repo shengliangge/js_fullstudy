@@ -1,7 +1,7 @@
 <template>
   <header class="commonHeader">
     <div class="left">
-      <el-button type="primary" icon="el-icon-s-fold" size="mini"></el-button>
+      <el-button icon="el-icon-s-fold" size="mini"></el-button>
       <div class="l-content"></div>
     </div>
     <div class="r-content">

@@ -10,8 +10,8 @@ import axios from 'axios'
 
 Vue.use(Swipe).use(SwipeItem).use(Icon).use(Field).use(ActionSheet).use(Toast).use(Panel).use(Uploader).use(axios)
 
-Vue.prototype.$http = axios
-Vue.prototype.$util = util
+Vue.prototype.$http = axios;
+Vue.prototype.$util = util;
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title
   next()

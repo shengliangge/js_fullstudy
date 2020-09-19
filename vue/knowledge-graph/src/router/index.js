@@ -7,7 +7,10 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    component: () => import('@/views/Main.vue') 
+    component: () => import('@/views/Main.vue')
+  }, {
+    path: '/login',
+    component: () => import('@/views/loginRegister.vue')
   }
 ];
 
