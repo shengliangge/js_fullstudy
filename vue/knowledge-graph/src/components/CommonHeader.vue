@@ -1,11 +1,12 @@
 <template>
   <header class="commonHeader">
     <div class="left">
-      <el-button icon="el-icon-s-fold" size="mini"></el-button>
+      <el-button icon="el-icon-s-fold" size="mini" @click="isShowAside"></el-button>
       <div class="l-content"></div>
     </div>
+
     <div class="r-content">
-      <el-dropdown trigger="click">
+      <el-dropdown trigger="click" v-if="isLogin">
         <span class="el-dropdown-link">
           <img :src="userImg" alt class="user" />
         </span>
@@ -14,6 +15,10 @@
           <el-dropdown-item>退出</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
+      <div class="right-contetn" v-else>
+        <el-button @click="gotoLogin">登陆</el-button>
+        <el-button @click="gotoRegister">注册</el-button>
+      </div>
     </div>
   </header>
 </template>
@@ -30,7 +35,19 @@ export default {
   data() {
     return {
       userImg: require("../assets/images/user.png"),
+      isLogin: false,
     };
+  },
+  methods: {
+    isShowAside() {
+      this.$emit("isShowAside");
+    },
+    gotoLogin() {
+      this.$router.push({ path: "/login", query: { isLogin: true } });
+    },
+    gotoRegister() {
+      this.$router.push({ path: "/register", query: { isLogin: false } });
+    },
   },
 };
 </script>

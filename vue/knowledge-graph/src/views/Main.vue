@@ -1,11 +1,11 @@
 <template>
   <el-container>
-    <el-aside width="300px" height="1000px">
+    <el-aside :style="{width: asideWidth + 'px' , transition: 'width 0.2s',}" >
       <common-aside></common-aside>
     </el-aside>
     <el-container>
       <el-header>
-        <common-header></common-header>
+        <common-header @isShowAside="isShowAside"></common-header>
       </el-header>
       <el-main>
         <common-main></common-main>
@@ -29,6 +29,16 @@ export default {
     CommonFooter,
     CommonMain,
   },
+  data() {
+    return {
+      asideWidth: 300,
+    };
+  },
+  methods:{
+    isShowAside(){      //打开与收起侧边导航
+      this.asideWidth=this.asideWidth==300?0:300
+    }
+  }
 };
 </script>
 
@@ -36,7 +46,7 @@ export default {
 .el-header {
   background-color: rgb(40, 41, 43);
 }
-.el-main{
+.el-main {
   padding: 0;
 }
 </style>
