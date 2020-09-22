@@ -37,12 +37,12 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
-import api from "@/api";
+// import api from "@/api";
+import { Login, Register } from "@/request/api"; // 导入我们的api接口
 export default {
   name: "login-register",
   data() {
@@ -62,8 +62,8 @@ export default {
     this.isLogin = this.$route.query.isLogin === "false" ? false : true; //判断路由跳转传递的isLogin值，并赋值给isLogin，从而展示登陆或者注册
   },
   methods: {
-    open2() {},
     changeType() {
+      //切换登陆或者注册
       this.isLogin = !this.isLogin;
       this.form.usermail = "";
       this.form.userpwd = "";
@@ -72,76 +72,118 @@ export default {
     // 登陆
     login() {
       const self = this;
+      if (self.form.usermail.trim() == "") {
+        this.$message({
+          message: "邮箱不能为空！",
+          type: "warning",
+        });
+        return;
+      }
+      if (self.form.userpwd.trim() == "") {
+        this.$message({
+          message: "密码不能为空！",
+          type: "warning",
+        });
+        return;
+      }
       if (self.form.usermail.trim() != "" && self.form.userpwd.trim() != "") {
         const params = {
           mail: self.form.usermail,
           password: self.form.userpwd,
         };
-        api
-          .login(params)
+        Login(params)
           .then((res) => {
+            // success
             console.log(res);
-            if (res.code == 200) {
-              console.log(res.data);
+            if (res.success) {
+              sessionStorage.setItem("userInfo", JSON.stringify(res.data)); //将用户信息存储到session
+              this.$message({
+                message: res.msg,
+                type: "success",
+                showClose: true,
+              });
+              this.$router.push({ path: "/" }); // 跳转到首页
+            } else {
+              this.$message({
+                showClose: true,
+                message: res.msg || "登陆错误",
+                type: "error",
+              });
             }
           })
-          .catch((res) => {
-            console.log(res);
+          .catch((error) => {
+            this.$message({
+              showClose: true,
+              message: "服务器异常",
+              type: "error",
+            });
+            console.log(error);
           });
-      } else {
-        alert("填写不能为空！");
       }
     },
     register() {
       const self = this;
+      if (self.form.usermail.trim() == "") {
+        this.$message({
+          showClose: true,
+          message: "邮箱不能为空！",
+          type: "warning",
+        });
+        return;
+      }
+      if (self.form.userpwd == "" || self.form.checkUserpwd == "") {
+        this.$message({
+          showClose: true,
+          message: "密码不能为空！",
+          type: "warning",
+        });
+        return;
+      }
+      if (self.form.userpwd != self.form.checkUserpwd) {
+        this.$message({
+          showClose: true,
+          message: "密码不一致！",
+          type: "warning",
+        });
+        this.form.userpwd = "";
+        this.form.checkUserpwd = "";
+        return;
+      }
       if (
-        self.form.checkUserpwd != "" &&
         self.form.usermail != "" &&
-        self.form.userpwd != ""
+        self.form.userpwd != "" &&
+        self.form.checkUserpwd != ""
       ) {
         const params = {
           mail: self.form.usermail,
           password: self.form.userpwd,
           repassword: self.form.checkUserpwd,
         };
-        api
-          .Register(params)
+        Register(params)
           .then((res) => {
-            this.$message({
-              message: "恭喜你，这是一条成功消息",
-              type: "success",
-            });
             console.log(res);
+            if (res.success) {
+              this.$message({
+                message: res.msg,
+                type: "success",
+              });
+              this.changeType(); //注册成功后切换到登陆
+            } else {
+              this.$message({
+                message: res.msg,
+                type: "error",
+              });
+            }
           })
-          .catch((err) => {
-            console.log(err);
+          .catch((error) => {
+            // error
+            console.log(error);
+            this.$message({
+              showClose: true,
+              message: "注册错误",
+              type: "error",
+            });
           });
-        // self
-        //   .$axios({
-        //     method: "post",
-        //     url: "http://127.0.0.1:10520/api/user/add",
-        //     data: {
-        //       checkUserpwd: self.form.checkUserpwd,
-        //       mail: self.form.usermail,
-        //       password: self.form.userpwd,
-        //     },
-        //   })
-        //   .then((res) => {
-        //     switch (res.data) {
-        //       case 0:
-        //         alert("注册成功！");
-        //         this.login();
-        //         break;
-        //       case -1:
-        //         this.existed = true;
-        //         break;
-        //     }
-        //   })
-        //   .catch((err) => {
-        //     console.log(err);
-        //   });
-      } else {
-        alert("填写不能为空！");
       }
     },
   },

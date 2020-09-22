@@ -1,21 +1,19 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import axios from 'axios'
 import QS from 'qs'
-const vue = new Vue()
+// const vue = new Vue()
 //axios配置
 axios.defaults.timeout = 10000
 axios.defaults.baseURL = 'http://localhost:3000/users'
 
 //返回状态的判断（相应拦截）
 axios.interceptors.response.use((res) => {
-  if (res.data.code !== 200) {
-    vue.$toast('网络异常')
+  if (res.data.code != 200) {
     return Promise.reject(res)
   }
   return res.data
 },
   (error) => {
-    vue.$toast('服务器异常')
     return Promise.reject(error)
   })
 export function fetchGet(url, param) {
