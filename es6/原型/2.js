@@ -8,5 +8,5 @@ function Car(color, owner) {
   this.owner = owner
 }
 
-var car = new Car('red', 'huang')
+var car = new Car('red', 'wang')
 var var1 = new Car('green', 'haonan')

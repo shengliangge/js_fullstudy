@@ -76,6 +76,23 @@ let insertNote = function (options) {
   let _sql = `insert into note set c_time=?,m_time=?,note_content=?,head_img=?,title=?,note_type=?,useId=?,nickname=?;`
   return allServices.query(_sql, options)
 }
+
+//查找用户
+let find = function (mail) {
+  let _sql = `select * from user where mail="${mail}";`
+  return allServices.query(_sql)
+}
+
+//测试注册
+let register = function (options) {
+  let _sql = `insert into user set mail=? , password=?;`
+  return allServices.query(_sql,options)
+}
+//用户登陆
+let login = function (mail, password) {
+  let _sql = `select * from user where mail="${mail}" and password="${password}";`
+  return allServices.query(_sql)
+}
 //导出方法
 module.exports = {
   getAllUsers,
@@ -84,5 +101,8 @@ module.exports = {
   insertUser,
   findNoteListByType,
   findNoteDetailById,
-  insertNote
+  insertNote,
+  register,
+  find,
+  login
 }

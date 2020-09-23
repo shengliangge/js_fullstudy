@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" id="input">
+    <span id="span"></span>
+  </div>
+</body>
+<script>
+  const data = {
+    text: 'hello world'
+  }
+  const input = document.getElementById('input')
+  const span = document.getElementById('span')
+  //数据劫持
+  Object.defineProperty(data, 'text', {
+    get() {
+      console.log('获取数据');
+    },
+    set(newVal) {
+      console.log('修改数据');
+      
+      input.value = newVal
+      span.innerHTML = newVal
+    }
+  })
+
+  input.addEventListener('keyup', function (e) {
+    // console.log(e);
+    data.text = e.target.value
+    span.innerHTML = newVal
+  })
+</script>
+
+</html>

@@ -112,7 +112,6 @@ router.post("/userLogin", async (ctx, next) => {
 
 //根据分类类名查找笔记列表
 router.post('/findNoteListByType', async function (ctx, next) {
-  console.log('1111');
   const note_type = ctx.request.body.note_type;
   const userId = ctx.request.body.userId;
   await userService.findNoteListByType(note_type, userId).then(async (res) => {
@@ -172,8 +171,6 @@ router.post('/findNoteDetailById', async function (ctx, next) {
 //发表笔记
 router.post('/insertNote', async function (ctx, next) {
   let c_time = utils.getNowFormatDate();
-  // console.log(c_time);
-  // console.log(m_time);
   let m_time = utils.getNowFormatDate();
   let note_content = ctx.request.body.note_content;
   let head_img = ctx.request.body.head_img
@@ -182,28 +179,110 @@ router.post('/insertNote', async function (ctx, next) {
   let useId = ctx.request.body.userId
   let nickname = ctx.request.body.nickname
   await userService.insertNote([c_time, m_time, note_content, head_img, title, note_type, useId, nickname])
-  .then(async (res) => {
-    let r = ''
-    if (res.affectedRows !== 0) {
-      r = 'ok'
-      ctx.body = {
-        code: "80000",
-        data: r,
-        mess: '发表成功'
-      }
-    } else {
-      r = 'error',
+    .then(async (res) => {
+      let r = ''
+      if (res.affectedRows !== 0) {
+        r = 'ok'
         ctx.body = {
-          code: "80004",
+          code: "80000",
           data: r,
-          mess: '发表失败'
+          mess: '发表成功'
         }
-    }
-  }).catch((err) => {
-    ctx.body = {
-      code: '80002',
-      data: err
-    }
-  })
+      } else {
+        r = 'error',
+          ctx.body = {
+            code: "80004",
+            data: r,
+            mess: '发表失败'
+          }
+      }
+    }).catch((err) => {
+      ctx.body = {
+        code: '80002',
+        data: err
+      }
+    })
 })
+
+
+router.post('/register', async function (ctx, next) {
+  let mail = ctx.request.body.mail
+  let password = ctx.request.body.password
+  await userService.register([mail, password])
+    .then(async (res) => {
+      let r = ''
+      if (res.affectedRows !== 0) {
+        r = 'ok'
+        ctx.body = {
+          code: 202,
+          data: [{
+            uid: 1,
+            mail: "541975984@qq.com",
+            role: 0,
+            mail_state: 0
+          }],
+          msg: "注册成功，请登录邮箱激活账号！",
+          success: true
+        }
+      } else {
+        r = 'error',
+          ctx.body = {
+            code: 203,
+            data: "203_当前账号已注册！",
+            msg: "当前账号已注册！",
+            success: false
+          }
+      }
+    }).catch((err) => {
+      ctx.body = {
+        code: '80002',
+        data: err
+      }
+    })
+})
+
+
+router.post("/login", async (ctx, next) => {
+  const mail = ctx.request.body.mail;
+  const password = ctx.request.body.password;
+  if (mail && password) {
+    await userService.login(mail, password).then((res) => {
+      if (!res.length) {
+        try {
+          throw Error("用户密码错误");
+        } catch (err) {
+          console.log(err);
+        }
+        ctx.body = {
+          code: "402",
+          data: "err",
+          msg: "账号或密码错误",
+          success: false
+        };
+      } else {
+        let result = {
+          id: res[0].id,
+          mail: res[0].mail
+        }
+        ctx.body = {
+          code: "200",
+          data: [{
+            "uid": 1,
+            "logtime": 1222223222,
+            "mail": "541975984@qq.com",
+            "role": 0,
+            "mail_state": 1
+          }],
+          msg: "登录成功",
+          success: true
+        };
+      }
+    });
+  } else {
+    ctx.body = {
+      code: "80001",
+      msg: "用户名、密码或昵称不能为空",
+    };
+  }
+});
 module.exports = router

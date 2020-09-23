@@ -25,6 +25,11 @@ export default {
     "v-tab": tab,
     "v-play": play,
   },
+  data() {
+    return {
+      // 测试数据
+    };
+  },
 };
 </script>
 <style lang="stylus">
