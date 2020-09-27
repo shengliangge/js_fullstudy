@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.common.dev.js"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <p>{{msg}}</p>
+    <p> {{count}}</p>
+    <button @click="add">add</button>
+  </div>
+  <script>
+    let app = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello world',
+        count: 0
+      },
+      methods: {
+        add() {
+          this.count++
+        }
+      },
+      watch: {
+        count(newVal, oldVal) {
+          if (newVal >= 10) {
+            this.msg = 'hello watch'
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
