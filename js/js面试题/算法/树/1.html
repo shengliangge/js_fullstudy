@@ -1,0 +1,53 @@
+<script>
+  var tree2 = {
+    name: "page.js",
+    require: [
+      {
+        name: "A.js",
+        require: [
+          {
+            name: "B.js",
+            require: [
+              {
+                name: "C.js"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        name: "D.js",
+        require: [
+          {
+            name: "C.js"
+          },
+          {
+            name: "E.js"
+          }
+        ]
+      }
+    ]
+  };
+  //   ["C.js", "B.js", "A.js", "C.js", "E.js", "D.js", "page.js"]
+
+  
+  function resolve(root) {
+    let res=[]
+    function walk(node) {
+      //递
+      if (node.require) {
+        for (let child of node.require) {
+          walk(child)
+        }
+      }
+      //归
+      res.push(node.name)
+      return res;
+    }
+    walk(root)
+    console.log(res);
+  }
+  console.log(resolve(tree2));
+
+  
+</script>

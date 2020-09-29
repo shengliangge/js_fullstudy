@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <div id="title">
+      title
+    </div>
+  </div>
+  <script>
+    let app = document.getElementById('app')
+    let title = document.getElementById('title')
+    app.addEventListener('click', (event) => {
+      console.log('app');
+      event.stopPropagation()   //阻止事件的进一步传播
+      // event.stopImmediatePropagation
+    },true)
+    title.addEventListener('click', (event) => {
+      console.log('title');
+    },true)
+
+  </script>
+</body>
+
+</html>
