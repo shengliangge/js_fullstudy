@@ -9,7 +9,7 @@ const app = new Koa()
 mongoose.connect(config.db, { useNewUrlParser: true }, (err) => {
   if (err) {
     console.error('Failed to connect to database')
-  } else {
+  } else { 
     console.log('Connecting database successfully');
   }
 })
