@@ -28,9 +28,7 @@
       }
     ]
   };
-  //   ["C.js", "B.js", "A.js", "C.js", "E.js", "D.js", "page.js"]
 
-  
   function resolve(root) {
     let res=[]
     function walk(node) {
@@ -45,7 +43,7 @@
       return res;
     }
     walk(root)
-    console.log(res);
+    console.log(res);  //   ["C.js", "B.js", "A.js", "C.js", "E.js", "D.js", "page.js"]
   }
   console.log(resolve(tree2));
 

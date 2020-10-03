@@ -1,0 +1,99 @@
+<!-- 代码题：
+点亮red，停1s，点亮 yellow，停2s，点亮 green 停 4s，然后循环5次。 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      background-color: grey;
+      display: inline-block;
+      margin: 30px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      ;
+    }
+
+    .green.light {
+      background-color: green;
+    }
+
+    .yellow.light {
+      background-color: yellow;
+    }
+
+    .red.light {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="red"></div>
+  <div class="yellow"></div>
+  <div class="green"></div>
+  <button id="next" onclick="go();">开始</button>
+  <script>
+    function green() {
+      var lights = document.getElementsByTagName("div");
+      for (var i = 0; i < 3; i++)
+        lights[i].classList.remove("light")
+      document.getElementsByClassName("green")[0].classList.add('light')
+    }
+    function red() {
+      var lights = document.getElementsByTagName("div");
+      for (var i = 0; i < 3; i++)
+        lights[i].classList.remove("light")
+      document.getElementsByClassName("red")[0].classList.add('light')
+    }
+    function yellow() {
+      var lights = document.getElementsByTagName("div");
+      for (var i = 0; i < 3; i++)
+        lights[i].classList.remove("light")
+      document.getElementsByClassName("yellow")[0].classList.add('light')
+    }
+
+    function once() {
+      return new Promise((resolve, reject) => {
+        red()
+        setTimeout(() => {
+          yellow()
+          setTimeout(() => {
+            green()
+            setTimeout(() => {
+              resolve()
+            }, 4000)
+          }, 2000)
+        }, 1000)
+      })
+    }
+    async function go() {
+      for (let i = 0; i < 2; i++) {
+        await once()
+      }
+    }
+    //异步任务
+    function sleep() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve()
+        }, time)
+      })
+    }
+  </script>
+</body>
+
+</html>
+
+
+<!-- GET POST 
+http并没有规定GET参数 一定要放到url后面
+用POST一定要放到请求体里面
+
+语义区别
+GET -> POST -> https
+-->
