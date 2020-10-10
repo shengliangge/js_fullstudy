@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* .container{
+    display: flex;
+    flex-direction: column-reverse;
+  } */
+  </style>
+</head>
+
+<body>
+  <ul class="container">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script>
+    let contain = document.querySelector('.container')
+    
+    // let lis = document.querySelectorAll(".container li")
+    let lis = document.getElementsByTagName('li')  //动态的，长度会随着后续操作改变
+    console.log(lis);
+
+
+    // 一个dom同时只属于一个父节点
+    for (let i = lis.length - 1; i >= 0; i--) {
+      contain.appendChild(lis[i])
+    }
+  </script>
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul class="container">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>1000</li>
+  </ul>
+  <div id="app"></div>
+  <script>
+    const contain = document.querySelector('.container'); 
+    let lis = document.querySelectorAll('.container li')
+    // let lis = document.getElementsByTagName('li');  // 动态的 living collection
+    // 一个 dom 同时属于一个父节点
+    for (let i = lis.length - 1; i >= 0; i --) {
+      contain.appendChild(lis[i]);
+    }
+    document.querySelector('#app').appendChild(lis[0]);
+
+    let li = document.getElementsByTagName('li');
+    console.log(li); // 7 个 li
+    let liNode = document.createElement('li')
+    document.querySelector('#app').appendChild(liNode);
+
+  </script>
+</body>
+
+</html> -->

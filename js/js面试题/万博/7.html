@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="container"></div>
+  <script>
+    //假如以下有 1000 个节点，请将以下数据解析生成对应的 dom 结构
+    var treeData = [
+      { "name": "A-1" },
+      { "name": "A-2" },
+      { "name": "A-3" },
+      {
+        "name": "A-4",
+        "sub": [
+          { "name": "A-4-1" },
+          { "name": "A-4-2" },
+          {
+            "name": "A-4-3",
+            "sub": [
+              { "name": "A-4-3-1" },
+              { "name": "A-4-3-2" }
+            ]
+          }
+        ]
+      }
+    ];
+    //在下面空白处写下通用方法
+    let containerDiv = document.querySelector('#container')
+    function treeList(tree, container) {     //树、容器
+      for (let i = 0; i < tree.length; i++) {
+        var element = document.createElement("ul");
+        element.innerHTML = tree[i].name;
+        container.appendChild(element)
+        if (tree[i].sub) {
+          treeList(tree[i].sub, element)
+        }
+      }
+      return
+    }
+    treeList(treeData, containerDiv)
+  </script>
+</body>
+</html>
