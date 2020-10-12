@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .out {
+      position: relative;
+      border: 1px solid #000;
+    }
+
+    .in1 {
+      transform: translate3d(0, 0, 0);
+      border: 1px solid #000;
+    }
+    .in2 {
+      /* 相对于 这个元素的包含块来计算的 */
+      /* 什么是包含块？ */
+      position: absolute;
+      border: 1px solid #000;
+      left: 0;
+      top: 0;
+      width: 50%;
+    }
+    .in3{
+      width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="out">out
+    <div class="in1">in1
+      <div class="in3">
+        <div class="in2">
+          in2
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
+
+<!-- 复习网站： -->
+<!-- https://developer.mozilla.org/zh-CN/docs/Web/CSS/All_About_The_Containing_Block -->

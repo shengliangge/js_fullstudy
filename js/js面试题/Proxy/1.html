@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let obj = {
+      a: 1,
+      b: function () { }
+    }
+    // Object.getPrototypeOf(obj)
+    // obj.__proto__
+    Object.setPrototypeOf(obj, { b: 2 })
+    // 查找属性的两种方法
+    // !("key" in obj)    //不包含    （会查询原型链）
+    // obj.hasOwnProperty("key")   //包含    （只查询当前这个对象）
+    console.log(obj);
+    for (let k in obj) {
+      console.log(k);
+    }
+    let newObj = new Proxy(obj, {
+      get(target, k) {
+        if (target.hasOwnProperty(k)) {
+        }
+        return Reflect.get(target, k)
+      },
+      set() { },
+      // apply() {
+      //   console.log('func call');
+      // },
+      deleteProperty() { }
+    })
+    console.log(newObj.b);
+    let f = () => { }
+    let newF = new Proxy(f, {
+      apply(...rest) {
+        console.log('f call');
+        return Reflect.apply(...rest)
+      }
+    })
+    newF();
+  </script>
+</body>
+
+</html>
