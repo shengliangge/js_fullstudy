@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style></style>
+</head>
+
+<body>
+  <div class="doma"></div>
+  <div class="domb"></div>
+  <div class="domc"></div>
+  <script>
+    const DomA = document.querySelector('.doma')
+    const DomB = document.querySelector('.domb')
+    const DomC = document.querySelector('.domc')
+    function timer() {
+      console.log('111');
+      DomA.style.width = DomA.offsetWidth + 1 + 'px'    //不会
+      DomB.style.width = DomA.offsetWidth + 1 + 'px'    //force layout  触发
+      DomC.style.width = DomA.offsetWidth + 1 + 'px'
+    }
+setTimeout(()=>{
+  timer()
+},1000)
+  </script>
+</body>
+
+</html>

@@ -5,6 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    .logo {
+      background-color: pink;
+
+    }
+
+    img {
+      vertical-align: bottom;
+    }
+  </style>
 </head>
 
 <body>
@@ -14,7 +29,11 @@
       1、 position absolute
   -->
   <!-- js操作->回流->重绘->合成 -->
-<!-- css里面transform opacity 两个属性，如果处于一个独立的图层，引起的变化会直接到达合成阶段 -->
+  <!-- css里面transform opacity 两个属性，如果处于一个独立的图层，引起的变化会直接到达合成阶段 -->
+  <div class="logo">
+    English
+    <img src="https://element.eleme.cn/static/guide.0a8462c.png " alt="">
+  </div>
 </body>
 
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/0.10.0/vue.js"></script>
+
+  <!-- script 是用来引入js  -->
+  <script>
+    function foo(data) {
+      console.log('接收到后端返回的数据了', data);
+    }
+  </script>
+  <!-- <script src="http://127.0.0.1:8088/api"></script> -->
+  <script>
+    function jsonp({ url }) {
+      return new Promise((resolve, reject) => {
+        let methodName = `jsonpCallback${Date.now()}`
+        window[methodName] = function (data) {
+          resolve(data);
+          clear()
+        }
+        const scriptNode = document.createElement('script');
+        scriptNode.src = url + '?callback=' + methodName
+        document.body.appendChild(scriptNode)
+        function clear() {
+          delete window[methodName]
+          document.body.removeChild(scriptNode)
+        }
+        setTimeout(() => {
+          reject()
+        }, 5000)
+      })
+    }
+    jsonp({ url: 'http://127.0.0.1:8088/api' }).then(res => {
+      console.log('结果:', res);
+    })
+  </script>
+</body>
+
+</html>
