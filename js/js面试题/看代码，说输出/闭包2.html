@@ -1,0 +1,16 @@
+<script>
+    this.x = 10;
+  this.y = 20;
+  // foo 定义完 x y 跟他在哪里调用无关
+  function foo() {
+    console.log(this.x, this.y);
+  }
+  foo(); // 10, 20
+  function bar() {
+    this.y = 30;
+    console.log(this.x, this.y); // 10, 30
+    foo(); // 10, 30
+  }
+  bar();
+
+</script>

@@ -1,0 +1,50 @@
+<!-- 不使用全局变量，实现1、2、1、2输出 -->
+<!-- <script>
+  function makeA() {
+    let flag = false;
+    return function () {
+      let res = flag ? 2 : 1
+      flag = !flag
+      return res
+    }
+  }
+  let a = makeA();
+  console.log(a());
+  console.log(a());
+  console.log(a());
+  console.log(a());
+
+</script> -->
+
+
+
+<!-- 实现一个 getPrime -->
+<script>
+  function makePrime() {
+    let val = 1
+    function isPrime(v) {
+      let res = []
+      for (let i = 1; i <= v; i++) {
+        if (val % i === 0) res.push(i)
+      }
+      return res.length === 2 && res[0] === 1 && res[1] === v;
+    }
+    return function () {
+      val++
+      while (!isPrime(val)) {
+        val++;
+      }
+      return val
+    }
+
+  }
+  let getPrime = makePrime();
+  console.log(getPrime());
+  console.log(getPrime());
+  console.log(getPrime());
+  console.log(getPrime());
+  console.log(getPrime());
+  console.log(getPrime());
+
+
+</script>

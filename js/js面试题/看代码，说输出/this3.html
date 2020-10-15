@@ -1,0 +1,15 @@
+<script>
+  window.data = 5;
+  var foo = {
+    data: 6,
+    click: () => {
+      console.log(this.data);
+    }
+  };
+
+  div.addEventListener('click', foo.click); // this 指向 div
+
+  var bar = foo.click;
+  bar();   // this 指向 window
+
+</script>

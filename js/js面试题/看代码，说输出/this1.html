@@ -1,0 +1,48 @@
+<!-- <script>
+  var a = function () {
+    this.b = 3;
+  }
+  var c = new a();
+  a.prototype.b = 9;
+  var b = 7;
+  a();
+
+  console.log(b);          //3   a()会让全局b改为3
+  console.log(c.b);       //3    c先找自己的属性，找不到才会去找原型链
+</script> -->
+
+<!-- 第二题 -->
+<!-- <script>
+  function B() {
+    console.log(this.c);
+    this.c = 1
+  }
+  B.prototype.c = 2;
+  let bbbb = new B();
+  // 输出2
+
+  console.log(bbbb);
+
+</script> -->
+
+<!-- 
+  this指向哪里，要看他在哪里调用
+  改变this的指向：
+1.默认指向window
+2.对象.xxx()
+3.call/apply/bind  
+4.new -->
+
+
+
+
+<script>
+  let obj = {
+    fn: function () {
+      console.log(this);
+    }
+  }
+  let func = obj.fn;
+  func()   
+  //指向window，看函数在哪里调用
+</script>
