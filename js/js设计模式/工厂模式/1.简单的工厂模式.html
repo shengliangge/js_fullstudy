@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function createPerson(name) {
+      var o = {};
+      o.name = name;
+      o.getName = function () {
+        console.log(this.name);
+      }
+      return o
+    }
+    var person1 = createPerson('张三')
+    person1.getName();
+    console.log(person1.name);
+
+  </script>
+</body>
+
+</html>
