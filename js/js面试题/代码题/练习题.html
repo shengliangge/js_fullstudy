@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = { a: { b: { c: { d: 3,e:[11,22] } } } }
+
+    function getValue(obj, str, defaultValue) {
+      let arr = str.split(".")
+      console.log(arr);
+      
+      for (let item of arr) {
+        if (obj.hasOwnProperty(item)) {
+          obj = obj[item]
+          console.log(obj);
+          
+        } else {
+          return defaultValue;
+        }
+      }
+      return obj 
+    }
+
+    console.log(getValue(obj, 'a.b.c.e.0', 1)) //=> 3(存在该属性返回该属性对应的值)
+    // console.log(getValue(obj, 'a.b.c.e', 1)) //=> 3(存在该属性返回该属性对应的值)
+
+
+
+  </script>
+</body>
+
+</html>

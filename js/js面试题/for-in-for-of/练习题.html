@@ -1,0 +1,40 @@
+<script>
+  // 今日题目：
+  // 实现对a这个实例对象用for-of遍历  
+  class A {
+    items = 'ABCD';
+    [Symbol.iterator] = function () {
+      let that = this;
+      let i = 0;
+      return {
+        next() {
+          if (i === that.items.length) {
+            return {
+              done: true,
+              value: undefined
+            }
+          }
+          let res = {
+            done: false,
+            value: [i,that.items[i]]
+          }
+          i++;
+          return res
+        }
+      }
+    }
+  }
+  const a = new A();
+  console.log(a);
+
+  for (const item of a) {
+    console.log(item);
+  }
+  // 依次输出：
+  // [0, "A"]
+  // [1, "B"]
+  // [2, "C"]
+  // [3, "D"]
+
+
+</script>
