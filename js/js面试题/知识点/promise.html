@@ -1,0 +1,19 @@
+<script>
+  let p = (t) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(t);
+      }, t)
+    })
+  }
+  let arr = [p(1000), p(2000)]
+  console.log('a');
+  Promise.all(arr).then(r => {
+    console.timeEnd('a');
+    console.log(r);
+  })
+  Promise.race(arr).then(r => {
+    console.timeEnd('a');
+    console.log(r);
+  })
+</script>

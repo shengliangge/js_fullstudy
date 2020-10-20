@@ -11,7 +11,17 @@ export default createStore({
     }
   },
   mutations: {
-
+    [type.ADD_PLAN](state, payload) {
+      state.planList = [...state.planList, payload]
+    },
+    [type.DELETE_PLAN](state, payload) {
+      state.planList.filter(item => {
+        return item._id !== payload._id
+      })
+    },
+    [type.GET_PLAN_LIST](state, payload) {
+      state.planList = payload
+    }
   },
   actions: {
     async [types.ADD_PLAN]({ commit }, payload) {

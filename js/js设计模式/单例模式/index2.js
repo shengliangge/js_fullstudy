@@ -1,7 +1,7 @@
 // 保证一个类只有一个实例,并提供一个访问他的全局访问点
 
 class SingleDog {
-  show () {
+  show() {
     console.log('我是一个单例对象');
   }
   static getInstance() {
@@ -11,7 +11,7 @@ class SingleDog {
     // }
     // return SingleDog.instance
     let instance = null
-    return !function() {
+    return !function () {
       if (!instance) {
         instance = new SingleDog()
       }

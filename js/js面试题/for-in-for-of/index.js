@@ -1,8 +1,8 @@
-const obj = {
-  a: 1,
-  b: 2,
-  c: 3
-}
+// const obj = {
+//   a: 1,
+//   b: 2,
+//   c: 3
+// }
 
 
 
@@ -15,7 +15,7 @@ const obj = {
 // for of
 // 不能遍历对象
 // 返回的是数组元素
-
+// 可迭代对象（实现了es6迭代协议的对象）
 // 原生具备 Iterator 接口的数据结构如下。
 
 // Array
@@ -50,3 +50,30 @@ for (let key in bar) {
 //ECMAScript 规范中定义了【数字属性应该按照索引值的大小升序排列、字符串属性根据创建时的顺序升序排列】
 // 数字属性称为排序属性，字符串属性称为常规属性
 
+// 对象如果想使用for-of：让一个不支持for-of的对象支持for-of
+let obj = {
+  a: 1,
+  b: 2,
+  [Symbol.iterator]: () => {
+    let keys = Object.keys(obj);
+    return {
+      next() {
+        if (keys.length === 0) {
+          return {
+            done: true,
+            value: undefined
+          }
+        }
+        let k = keys.shift()
+        return {
+          done: false,
+          value: obj[k]
+        }
+      }
+    }
+  }
+}
+for (let item of obj) {
+  console.log(item);
+   
+}

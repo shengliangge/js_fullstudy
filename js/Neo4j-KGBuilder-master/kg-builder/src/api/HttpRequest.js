@@ -9,7 +9,7 @@
 import axios from "axios";
 import { setToken, getToken } from "./token";
 import { Message } from "element-ui";
-import router from "@/router/index";
+import router from "@/router";
 
 export default class HttpRequest {
   constructor(baseUrl = "") {
