@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+      padding: 0;
+    }
+
+    body {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .loading {
+      margin: 12px;
+      text-align: center;
+    }
+
+    .action {
+      margin: 12px;
+      text-align: center;
+    }
+
+    .action button {
+      margin-right: 8px;
+    }
+
+    .link {
+      display: block;
+      padding: 8px;
+      text-align: center;
+      color: red;
+    }
+
+    .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      column-count: 4;
+    }
+
+    .img-wrap {
+      width: 25%;
+      padding: 8px;
+    }
+
+    .img {
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .move {
+      transition: transform 1s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <img src="https://pic4.zhimg.com/v2-2103acaf025ceda331a0dd59022443ab_r.jpg" class="img-wrap"><img
+      src="https://pic3.zhimg.com/v2-89735fee10045d51693f1f74369aaa46_r.jpg" alt="" class="img-wrap"><img
+      src="https://pic2.zhimg.com/v2-edc1b118c420939c545b1449344139b5_r.jpg" class="img-wrap"><img
+      src="https://pic4.zhimg.com/v2-a8fb0a1d8581e4bfce905791271711c7_r.jpg" class="img-wrap"><img
+      src="https://pic1.zhimg.com/v2-c90799771ed8469608f326698113e34c_r.jpg" class="img-wrap"><img
+      src="https://pic1.zhimg.com/v2-8d3dd83f3a419964687a028de653f8d8_r.jpg" class="img-wrap"><img
+      src="https://pic2.zhimg.com/v2-ff15820a9c1cb8e2bb0af1048ea81145_r.jpg" class="img-wrap"></div>
+  <script>
+    const imgs = document.querySelectorAll('img');
+    let prePosition = new Map();
+    for (let img of imgs) {
+      let { left, top } = img.getBoundingClientRect()
+      prePosition.set(img, { left, top });
+    }
+    // CRUD 随机这些节点
+    function random() {
+      // imgs   =>
+      let currentImgs = [...imgs];
+      // [1,2]  a - b
+      // Math.random() - 0.5 正 负
+      currentImgs.sort((a, b) => Math.random() - 0.5);  // 伪随机
+      // document.querySelector('')
+      for (let img of currentImgs) {
+        document.querySelector('.wrap').appendChild(img);
+      }
+      // Last
+      let currentPosition = new Map();
+      for (let img of imgs) {
+        let { left, top } = img.getBoundingClientRect()
+        currentPosition.set(img, { left, top });
+      }
+      // invert
+      for (let img of imgs) {
+        let keyFrame = [
+          {
+            transform: `translate(${prePosition.get(img).left
+              - currentPosition.get(img).left}px,
+             ${prePosition.get(img).top - currentPosition.get(img).top}px)`
+          },
+          {
+            transform: 'translate(0)'
+          }
+        ]
+        img.animate(keyFrame, {
+          duration: 300,
+          easing: 'ease-in-out'
+        })
+      }
+    }
+
+
+setInterval(()=>{
+  random()
+},2000)
+  </script>
+</body>
+
+</html>

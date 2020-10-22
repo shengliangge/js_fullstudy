@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      padding: 0;
+      margin: 0;
+    }
+    .carousel {
+      white-space: nowrap;
+      font-size: 0;
+      width: 750px;
+      /* overflow: hidden; */
+    }
+
+    .carousel>img {
+      display: inline-block;
+      width: 750px;
+      height: 370px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="carousel">
+    <img
+      src="https://yanxuan.nosdn.127.net/e1d32c538a9fcf420411592746098ad2.jpg?type=webp&amp;amp;imageView&amp;amp;quality=75&amp;amp;thumbnail=750x0">
+    <img
+      src="https://yanxuan.nosdn.127.net/7e01b30c2c440e118cf09e14c7a69266.jpg?type=webp&amp;imageView&amp;quality=75&amp;thumbnail=750x0">
+    <img
+      src="https://yanxuan.nosdn.127.net/94408b4d014ce6774e8f768bdf9b6f60.jpg?type=webp&amp;amp;imageView&amp;amp;quality=75&amp;amp;thumbnail=750x0">
+    <img
+      src="https://yanxuan.nosdn.127.net/e14d684c9dc43de2af5215c3d49b6870.jpg?type=webp&amp;amp;imageView&amp;amp;quality=75&amp;amp;thumbnail=750x0">
+  </div>
+  <script>
+    const imgs = document.querySelectorAll('img');
+    let i = 0;
+    function next() {
+      let next = (i + 1) % imgs.length;
+      let currentImg = imgs[i];
+      let nextImg = imgs[next];
+      console.log(i);
+      
+      //保证了动画之前 01 12 23 30 01 12 。。。往复循环
+      currentImg.style.transition="none"
+      nextImg.style.transition="none"
+      currentImg.style.transform = `translateX(${-100 * i}%)`;
+      nextImg.style.transform = `translateX(${100 - 100 * next}%)`;
+      // 动画
+    
+      currentImg.offsetLeft; nextImg.offsetLeft
+      currentImg.style.transition="all 1s"
+      nextImg.style.transition="all 1s"
+      currentImg.style.transform = `translateX(${-100 * i - 100}%)`;
+      nextImg.style.transform = `translateX(${100 - 100 * next - 100}%)`;
+      i = next
+    }
+    setInterval(() => {
+      next();
+    }, 2000)
+    
+  </script>
+</body>
+
+</html>

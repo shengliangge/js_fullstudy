@@ -1,0 +1,37 @@
+<script>
+  var locationList = [
+    { id: 0, name: "中国" },
+    { id: 1, pid: 0, name: "北京市" },
+    { id: 2, pid: 1, name: "昌平区" },
+    { id: 3, pid: 2, name: "海淀区" },
+    { id: 4, pid: 1, name: "a区" },
+  ];
+
+  function treeWalker(arr) {
+    let root = arr.shift()
+    function insert(pid, child) {
+      //id==pic??
+      function walk(node) {
+        console.log('遍历', pid);
+        if (node.id === pid) {
+          if (!node.sub) node.sub = []
+          node.sub.push(child)
+          return
+        }
+        if (node.sub) {
+          for (let c of node.sub) {
+            walk(c)
+          }
+        }
+      }
+      walk(root);
+    }
+    // 对数组里面的每一项，都去树里面的查找  黁 
+    for (let child of arr) {
+      let { pid } = child;
+      insert(pid, child)
+    }
+    return root;
+  }
+  console.log(treeWalker(locationList));
+</script>

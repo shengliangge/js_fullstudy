@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #el {
+      transition: all 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="el">123</div>
+  <script>
+    const el = document.querySelector('#el')
+    const divNode = document.createElement('div');
+    divNode.style.width = '20px';
+    divNode.style.height = '20px';
+    divNode.style.backgroundColor = "red";
+    let img = new Image();
+    img.src = 'https://yanxuan.nosdn.127.net/94408b4d014ce6774e8f768bdf9b6f60.jpg?type=webp&amp;amp;imageView&amp;amp;quality=75&amp;amp;thumbnail=750x0'
+    let prePosition = el.getBoundingClientRect();
+    setTimeout(() => {
+      document.body.insertBefore(img, el)
+      let currentPosition = el.getBoundingClientRect();
+      // keyframe
+      let keyframe = [{
+        transform: `translateY(${prePosition.top-currentPosition.top}px)`
+      }, {
+        transform: 'translateY(0px)'
+      }];
+      // play是播放动画
+      el.animate(keyframe, {
+        duration: 300,
+        easing: 'ease-in-out'
+      })
+    }, 2000)
+  </script>
+</body>
+
+</html>
