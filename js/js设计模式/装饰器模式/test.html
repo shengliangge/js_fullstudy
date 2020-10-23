@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    function classDecorator(target) {
+      target.hasDecorator = true
+      return target
+    }
+
+
+    @classDecorator  // classDecorator(Button)
+    class Button {
+
+    }
+
+    console.log('Button是否被装饰了：', Button.hasDecorator);
+  </script>
+</body>
+
+</html>
