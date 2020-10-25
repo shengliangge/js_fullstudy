@@ -21,6 +21,6 @@ export default {
     return {
       x1, y1, x2, y2, handMove1, handMove2, time
     }
-  }
+  }         
 }
 </script>

@@ -2,6 +2,7 @@
   <div id="app">
     <v-header></v-header>
     <!-- header组件 -->
+    <div></div>
     <router-view />
   </div>
 </template>
