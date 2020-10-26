@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 阮一峰版本，并不是原地的
+    // 分区：小于它的放左边，大于它的放右边
+    function quickSort(arr) {
+      if (arr.length <= 1) return arr;
+      let arr1 = [], arr2 = [];
+      let p = arr[0]
+      for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < p) {
+          arr1.push(arr[i])
+        } else {
+          arr2.push(arr[i])
+        }
+      }
+      let res = [...quickSort(arr1), p, ...quickSort(arr2)]
+      return res
+    }
+    console.log(quickSort([55, 10, 99, 66, 57, 8, 15, 8, -2, 100, 39, 48]));
+
+
+
+  </script>
+</body>
+
+</html>

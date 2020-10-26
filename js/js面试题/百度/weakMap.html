@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 都存放key-value键值对形式 -->
+  <!-- weakMap：key一定是对象 -->
+
+  <script>
+    // 弱引用和强引用的区别
+    let obj = {   //有obj引用着它，不会被销毁
+      a: 'A'
+    }
+    let wm = new Map();
+    wm.set(obj, 'A')   //这次引用是不算数的
+    obj = null
+
+    console.log(wm)   //不存在了
+
+// event-loop是浏览器为了协调 js  网络 定时器 事件
+// 1 window-event-loop最常遇到的
+// 2 worker-event-loop 前端里面，有web-worker
+// 3 worklet-event-loop
+
+  </script>
+</body>
+
+</html>
