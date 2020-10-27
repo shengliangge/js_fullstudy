@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    Function.prototype.mybind = function (THIS, ...arg1) {
+      let fn = this;   //哪个函数调用bind
+      function T(...arg2) {
+        return fn.call(this, ...arg1, ...arg2)
+      }
+      T.prototype=Object.create(fn.prototype)
+      return T
+    }
+    function sum(a, b, c) {
+      return a + b + c
+    }
+    sum.prototype.say = function () {
+      console.log(10)
+    }
+    let sum10 = sum.mybind(null, 10)
+    let obj = new sum10();
+    obj.say()
+    // console.log(sum10(20, 30))
+  </script>
+</body>
+
+</html>
