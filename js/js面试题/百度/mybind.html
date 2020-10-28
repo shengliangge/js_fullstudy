@@ -1,0 +1,24 @@
+<script>
+  // this四种指向：默认window obj.xxxx call/apply/bind new(优先级最高)
+  Function.prototype.myBind = function(THIS, ...arg1) {
+    let fn = this
+    function T(...arg2) {
+      // 判断最后调用时是用new还是直接调用,new的话会直接覆盖之前bind对this进行的指向修改
+      // 如: let bar = foo.bind(obj) 直接调用bar()时this指向obj
+      // let b = new bar()再调用时this指向b
+      return fn.call(this instanceof T ? this : THIS, ...arg1, ...arg2)
+    }
+    T.prototype = Object.create(fn.prototype)
+    return T
+  }
+  function sum(a, b, c) {
+    return a + b + c
+  }
+  sum.prototype.say = function() {
+    console.log(10);
+  }
+  let sum10 = sum.myBind(null, 10)
+  console.log(sum10(20, 30));
+  let obj = new sum10()
+  obj.say()
+</script>
