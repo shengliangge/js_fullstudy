@@ -1,0 +1,12 @@
+<script>
+  let instance = null
+  function Person() {
+    if (!instance) {
+      instance = this
+      console.log(this)
+    }
+    return instance
+  }
+  console.log(new Person() === new Person())
+
+</script>

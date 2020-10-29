@@ -1,0 +1,26 @@
+<script>
+  // [1, 5, 9, 3, 6, 8].reduce((pre, next) => {
+  //   console.log(next)
+  //   return next
+  // })
+
+  // 实现map方法
+  Array.prototype.myMap = function (fn) {
+    let res = []
+    for (let i = 0; i < this.length; i++) {
+      let item = this[i]
+      res.push(fn(item))
+    }
+    return res
+  }
+  // reduce实现
+  Array.prototype.myMap2 = function (fn) {
+    return this.reduce((pre, next) => {
+      pre.push(fn(next))
+      return pre
+    }, [])
+  }
+
+  const r = [1, 2, 3].myMap(x => x + 1)
+  console.log(r)
+</script>

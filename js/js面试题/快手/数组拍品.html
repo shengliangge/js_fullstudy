@@ -1,0 +1,19 @@
+<!-- s数组扁平化，加深度 -->
+<script>
+  let a = [1, 2, 3, [4, [5, [6]]]]
+  function flatArr(array, depth) {
+    let res = [], de = 0
+    flat(array)
+    function flat(arr) {
+      for (let item of arr) {
+        if (Array.isArray(item) && ++de < depth) {
+          flat(item)
+        } else {
+          res.push(item)
+        }
+      }
+    }
+    return res
+  }
+  console.log(flatArr(a, 2))
+</script>

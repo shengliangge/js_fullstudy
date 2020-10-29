@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //  元编程：修改自定义 语言默认行为 
+    //  一个对象不能用 for-of 遍历，Symbol.iterator 
+    //  可以修改instanceOf行为  Symbol.hasInstance 
+
+    console.log([] instanceof MyArray); // true
+
+    myArr[Symbol.hasInstance] = function () {
+      return true;
+    }
+
+
+    // 参数接收两个，左边对象和右边实例
+    function instanceOf(obj, Constructor) {
+      let proto = obj.__proto__;
+      while (proto !== Constructor.prototype) {
+        proto = proto.__proto__;
+        if (proto === null) {
+          return false
+        }
+      }
+      return true
+    }
+    console.log(instanceOf([], Array))
+    console.log(instanceOf({}, Object))
+    console.log(instanceOf(Function, Object))
+    console.log(instanceOf(Object, Function))
+  </script>
+</body>
+
+</html>

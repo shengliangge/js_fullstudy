@@ -1,0 +1,10 @@
+<script>
+  // （编程题）实现console.log((10).add(10).minus(2)) //18
+  Number.prototype.add = function (v) {
+    return this + v
+  }
+  Number.prototype.minus = function (v) {
+    return this - v
+  }
+  console.log((10).add(10).minus(2))
+</script>
