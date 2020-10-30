@@ -8,4 +8,7 @@
 
 4. 
 
-新增组件 ：fragment  teleport  suspense
+新增组件 ：
+fragment  : 不再需要一个无用的根节点
+teleport  ：可以指定dom节点插入
+suspense  : 更好的实现异步组件

@@ -1,0 +1,17 @@
+<script>
+  function curry(fn) {
+    let len = fn.length, args = [];
+    function T(...arg) {
+      args = args.concat(arg);
+      if (args.length >= len) {
+        let res = fn(...args);
+        args = [];
+        return res;
+      } else {
+        return T;
+      }
+    }
+    return T;
+  }
+m
+</script>
