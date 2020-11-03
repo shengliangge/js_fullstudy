@@ -54,19 +54,8 @@ export default {
 
 <style lang="less" >
 .van-nav-bar {
-  background-color: #42bd56;
-  color: #fff;
   &::after {
-    border-bottom: none;
-  }
-  .van-nav-bar__text {
-    color: #fff;
-  }
-  .van-icon {
-    color: #fff;
-  }
-  .van-nav-bar__title {
-    color: #fff;
+    border-bottom-width: none;
   }
 }
 </style>
