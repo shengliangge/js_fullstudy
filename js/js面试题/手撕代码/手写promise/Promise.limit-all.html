@@ -1,0 +1,39 @@
+<script>
+  function sleep(t) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(t)
+      }, t)
+    })
+  }
+  const time = function (t) {
+    return function () {
+      return sleep(t)
+    }
+  }
+  Promise.limitAll = function (promiseCreators, max) {
+    let i = 0; count = 0, pending = 0, res = []
+    return new Promise((resolve, reject) => {
+      function requestWork() {
+        if (count >= promiseCreators.length) {
+          resolve(res)
+        }
+        while (pending < max &&i<promiseCreators.length) {
+          const creator = promiseCreators[i]
+          let index = i;
+          pending++        //代表当前执行的数
+          creator().then((r) => {   //合适的时机执行
+            pending--
+            count++
+            res[index] = r
+            requestWork()
+          })
+          i++
+        }
+      }
+      requestWork()
+    })
+  }
+  Promise.limitAll([time(1000), time(500), time(300), time(400)], 2).then()
+  console.log(111)
+</script>

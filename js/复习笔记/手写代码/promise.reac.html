@@ -1,0 +1,58 @@
+<script>
+  function sleep(t) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+
+        resolve(t)
+      }, t)
+    })
+  }
+
+  Promise.myRace = function (PromiseArr) {
+    return new Promise((resolve, reject) => {
+      for (let i = 0; i < PromiseArr.length; i++) {
+        PromiseArr[i].then((r) => {
+          if (flag) return
+          flag = true
+          resolve(r)
+        }).catch((err) => {
+          if (flag) return
+          flag = true
+          reject(err)
+        })
+      }
+      let flag = false
+    })
+  }
+
+  Promise.myRace([sleep(500), sleep(300), sleep(1000), sleep(700),]).then(
+    (r) => {
+      console.log(r)
+    }
+  )
+</script>
+
+
+
+<script>
+  Promise.myRace = function (promiseArr) {
+    return new Promise((resolve, reject) => {
+      for (let i = 0; i < promiseArr.length; i++) {
+        promiseArr[i].then(res => {
+          resolve(res);
+        }).catch(err => {
+          reject(err);
+        })
+      }
+    });
+  };
+
+  const arr = [new Promise((resolve, reject) => { setTimeout(() => { resolve(1) }, 2000) }), new Promise((resolve, reject) => { setTimeout(() => { reject(1) }, 1000) })]
+  console.log(Promise.myRace(arr));
+  console.log(Promise.race(arr));
+
+  const arr2 = [Promise.resolve(1), Promise.reject(2)];
+  console.log(Promise.myRace(arr2));
+  console.log(Promise.race(arr2));
+
+</script>

@@ -1,0 +1,27 @@
+<!-- <button id="btn">555</button>
+<script>
+  // 在规定的时间未触发第二次，就执行
+  function debounce(fn, time) {
+    let timer = null;
+    // 利用闭包
+    return function () {
+      //在规定的时间内再次触发就会清除定时器然后重设
+
+      if (timer) clearTimeout(timer)     //如果存在就清除
+      timer = setTimeout(() => {
+        fn.apply(this, arguments)
+      }, time)
+    }
+  }
+
+  function foo(a = "aaa") {
+    console.log(a)
+  }
+  let foo= debounce(foo, 1000)
+  document.getElementById('btn').addEventListener('click', foo)
+</script> -->
+
+<!-- <script>
+  // 节流
+  // 在规定的时间内只执行一次
+</script> -->

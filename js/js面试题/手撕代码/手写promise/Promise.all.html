@@ -1,0 +1,33 @@
+<script>
+  function sleep(t) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(t)
+      }, t)
+    })
+  }
+
+  Promise.all([sleep(1000), sleep(500), sleep(300), sleep(400)]).then(r => {
+    console.log(r);
+  })
+
+  //原生实现
+  Promise.myAll = function (PromiseArr) {
+    return new Promise((resolve, reject) => {
+      let res = [], count = 0;
+      for (let i = 0; i < PromiseArr.length; i++) {
+        // i是原来在数组中的顺序
+        PromiseArr[i].then((r) => {
+          // 最终成功的顺序
+          res[i] = r;
+          count++;
+          if (count === PromiseArr.length) {
+            resolve(res)
+          }
+        }).catch(() => {
+          reject()
+        })
+      }
+    })
+  }
+</script>
