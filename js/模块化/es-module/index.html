@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <script src='./a.js'></script>
+  <script src='./b.js'></script> -->
+  <script type="module">
+    // ES-module 在代码静态分析（编译）的时候就知道导入了什么东西
+    // commonJS在代码运行的时候才知道导入了什么东西
+    import('./b.js')
+  </script>
+</body>
+
+</html>
+
+number string boolean null 数组 {}

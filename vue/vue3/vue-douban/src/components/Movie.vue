@@ -13,6 +13,7 @@
 <script>
 import { Image } from 'vant'
 import Star from './Star'
+import {getMovieSection} from '@/utils/movie'
 export default {
   components: {
     Star,
