@@ -3,7 +3,10 @@ function sun(a, b, c) {
 }
 
 function curry(fn) {
-
+  let len = fn.length
+  return function temp(){
+    
+  }
 }
 
 function fn(a, b, c, d, e) {
@@ -13,6 +16,7 @@ let _fn = curry(fn)
 _fn(1, 2, 3, 4, 5)
 _fn(1)(2)(3)(4)(5)
 _fn(1, 2)(3, 4)(5)
+
 
 // 降低函数的通用性，提高函数的适用性
 
