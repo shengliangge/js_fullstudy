@@ -1,28 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+css实现一个直角三角形，实心，直角朝正上方
+<style>
+  #box {
+    width: 0px;
+    height: 0px;
+    border-left: 10px solid rgb(255, 255, 255, 0);
+    border-right: 10px solid rgb(255, 255, 255, 0);
+    border-top: 10px solid rgba(255, 255, 255, 0);
+    border-bottom: 10px solid rgb(0, 0, 0);
+  }
+</style>
 
 <body>
-  <script>
-
-    function classDecorator(target) {
-      target.hasDecorator = true
-      return target
-    }
-
-
-    @classDecorator  // classDecorator(Button)
-    class Button {
-
-    }
-
-    console.log('Button是否被装饰了：', Button.hasDecorator);
-  </script>
+  <div id="box"></div>
 </body>
-
-</html>
