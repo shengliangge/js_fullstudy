@@ -15,8 +15,21 @@ const foo = (function () {
       return price *= 0.8
     }
   }
-  return function foo(price, type) {
+  function foo(price, type) {
     if (!sale[type]) return //没有这个折扣
-    sale[type](price)   //有就执行
+    return sale[type](price)   //有就执行
   }
+  foo.add = function (type, fn) {
+    //先判断是否有
+    if (sale[type]) return '已经存在'
+    sale[type] = fn
+    return '添加成功'
+  }
+  foo.del=function(type){
+    // 先判断有没有
+    if(sale[type]){
+      delete sale[type]
+    }
+  }
+  return foo
 })()

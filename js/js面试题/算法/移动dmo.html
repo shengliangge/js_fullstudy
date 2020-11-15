@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #content {
+      position: absolute;
+      border: 1px solid #000;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="content">移动我</div>
+  <button id="btn">点击我</button>
+  <script>
+    let box = document.querySelector('#content')
+    let btn = document.querySelector('#btn')
+    let num = 1
+    btn.addEventListener('click', () => {
+      var left = box.left
+      console.log(box)
+      box.style.transform = `translateY(${num++*-100}px)`;
+
+    })
+  </script>
+</body>
+
+</html>

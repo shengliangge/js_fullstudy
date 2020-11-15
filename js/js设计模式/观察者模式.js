@@ -1,6 +1,6 @@
 // 观察者构造函数
 class Observer {
-  constructor(name, fn = () => { }) {  //给默认值
+  constructor(name, fn = () => {}) {  //给默认值
     this.name = name
     this.fn = fn
   }
