@@ -5,15 +5,15 @@ const Person = (function () {
     this.age = age
   }
   let instance = null
-  return function (...arg) {
+  return function single(...arg) {
     if (!instance) instance = new Person(...arg)
     return instance
   }
 })()
 
 
-let p1 = Person('cccc',18)
-let p2 = Person()
+let p1 = new Person('cccc', 18)
+let p2 = new Person()
 console.log(p1);
 console.log(p2);
 console.log(p1 === p2);
