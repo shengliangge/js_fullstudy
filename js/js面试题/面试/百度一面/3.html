@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      display: flex;
+      background: pink;
+      overflow: hidden;
+    }
+
+    .btn {
+      border: 1px solid #000;
+      background: #eee;
+      margin-left: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      flex-grow: 1;
+    }
+
+    .box1 {
+      /* flex: 1 0 auto; */
+      overflow: hidden;
+      width: 150px;
+      word-spacing: nowrap;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="btn box1">可就大了卡机放得开辣椒打翻了空间A股粉</div>
+    <div class="btn">按钮</div>
+    <div class="btn">按钮</div>
+  </div>
+</body>
+
+</html>

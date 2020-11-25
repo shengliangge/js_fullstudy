@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(53, 49, 49);
+      margin-bottom: 10px;
+      /* transition: width 2s ease-in-out; */
+      animation: foo 3s 1 ease-in-out;
+    }
+
+    @keyframes foo {
+      0%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box" id="box"></div>
+  <button id="btn">按钮</button>
+  <script>
+    let box = document.getElementById('box')
+    document.getElementById('btn').addEventListener('click', () => {
+      box.style.width = 200 + "px"
+      console.log('点击')
+    })
+  </script>
+</body>
+
+</html>
